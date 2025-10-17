@@ -1,0 +1,42 @@
+{
+  "name": "voidseo-secure",
+  "version": "1.0.0",
+  "description": "VoidSEO Free Tier with secure authentication",
+  "main": "index.js",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "dev-next": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo 'Tests à implémenter'",
+    "check-config": "node -e \"console.log('✅ Config OK si pas d\\'erreur'); require('dotenv').config({path:'.env.local'}); console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL?.substring(0,30)+'...'); console.log('Anon Key:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.substring(0,30)+'...');\"",
+    "export": "next export",
+    "lint": "next lint",
+    "setup:db": "node scripts/migrate-db.js",
+    "setup:admin": "node scripts/create-admin.js",
+    "test:setup": "node scripts/test-setup.js",
+    "setup:all": "npm run setup:db && npm run setup:admin"
+  },
+  "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "@supabase/supabase-js": "^2.38.0",
+    "dotenv": "^16.6.1",
+    "lru-cache": "^10.0.0",
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "keywords": [
+    "seo",
+    "automation",
+    "void-loop",
+    "supabase",
+    "secure"
+  ],
+  "author": "VoidSEO",
+  "license": "MIT"
+}

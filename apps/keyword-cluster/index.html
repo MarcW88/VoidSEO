@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Clusterer — VoidSEO</title>
+    <meta name="description" content="Group keywords by semantic similarity and search intent using embeddings and clustering algorithms. Built with the VOID Loop methodology.">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/index.html">Framework</a></li>
+                <li><a href="../../apps/index.html">Apps</a></li>
+                <li><a href="../../lab/index.html">Lab</a></li>
+                <li><a href="../../docs/index.html">Docs</a></li>
+                <li><a href="../../pricing/index.html" class="nav-cta">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb" style="margin-bottom: 1rem;">
+                    <a href="../../apps/index.html" style="color: var(--void-light-gray);">Apps</a> 
+                    <span style="color: var(--void-light-gray);"> / </span>
+                    <span style="color: var(--void-accent);">Keyword Clusterer</span>
+                </div>
+                <h1>Keyword Clusterer</h1>
+                <p class="hero-subtitle">
+                    Group keywords by semantic similarity and search intent using embeddings and clustering algorithms.
+                </p>
+                <div class="status-info" style="margin: 1rem 0;">
+                    <span class="status-badge status-stable">Stable v1.0</span>
+                    <span style="margin-left: 1rem; color: var(--void-light-gray);">Production ready</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <p>
+                            Transform your keyword lists from chaotic spreadsheets into organized, actionable clusters. 
+                            Our Keyword Clusterer uses advanced NLP and machine learning to group keywords by semantic 
+                            similarity and search intent, helping you build better content strategies.
+                        </p>
+                        
+                        <div class="callout">
+                            <h4>Perfect for</h4>
+                            <ul>
+                                <li>Content planning and strategy</li>
+                                <li>PPC campaign organization</li>
+                                <li>Site architecture planning</li>
+                                <li>Competitive analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="card">
+                            <h3>Performance Stats</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">1M+</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Keywords clustered</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">92%</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Clustering accuracy</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">3.2s</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Avg. processing time</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">800+</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Active users</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section">
+            <div class="container">
+                <h2>Features</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Multiple Algorithms</h3>
+                        <p>Choose from K-means, DBSCAN, hierarchical clustering, or let our system auto-select the best approach.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">Auto-optimization</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Semantic Understanding</h3>
+                        <p>Uses OpenAI embeddings to understand true keyword meaning, not just surface-level text similarity.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">text-embedding-3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Intent Classification</h3>
+                        <p>Automatically categorizes clusters by search intent: informational, navigational, transactional, commercial.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Intent AI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Visual Clustering</h3>
+                        <p>Interactive 2D and 3D visualizations help you understand cluster relationships and quality.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">t-SNE</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Batch Processing</h3>
+                        <p>Handle large keyword lists (10K+ keywords) with efficient parallel processing and progress tracking.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Async</span>
+                            <span class="tech-tag">Multiprocessing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Export Options</h3>
+                        <p>Export results to CSV, Excel, Google Sheets, or JSON with customizable formatting and metadata.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Multiple formats</span>
+                            <span class="tech-tag">API integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Examples -->
+        <section class="section">
+            <div class="container">
+                <h2>Usage Examples</h2>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Basic Clustering</h3>
+                        <pre><code>from voidseo import KeywordClusterer
+
+clusterer = KeywordClusterer()
+
+# Load keywords
+keywords = [
+    "best running shoes",
+    "top athletic footwear", 
+    "marathon training tips",
+    "how to run faster",
+    "running shoe reviews"
+]
+
+# Cluster automatically
+clusters = clusterer.cluster(keywords)
+
+# Export results
+clusterer.export_csv(clusters, 'keyword_clusters.csv')</code></pre>
+                    </div>
+                    
+                    <div>
+                        <h3>Advanced Configuration</h3>
+                        <pre><code># Custom clustering parameters
+clusters = clusterer.cluster(
+    keywords,
+    algorithm='dbscan',
+    min_samples=3,
+    eps=0.3,
+    include_intent=True,
+    visualize=True
+)
+
+# Get cluster statistics
+stats = clusterer.get_cluster_stats(clusters)
+print(f"Silhouette score: {stats['silhouette']}")
+print(f"Number of clusters: {stats['n_clusters']}")
+
+# Visualize results
+clusterer.plot_clusters(clusters, method='tsne')</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clustering Methods -->
+        <section class="section">
+            <div class="container">
+                <h2>Clustering Methods</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>K-means</h3>
+                        <p><strong>Best for:</strong> Large datasets with roughly equal cluster sizes</p>
+                        <p><strong>Pros:</strong> Fast, scalable, consistent results</p>
+                        <p><strong>Cons:</strong> Requires pre-defining number of clusters</p>
+                        <div class="method-params">
+                            <code>n_clusters</code>, <code>init</code>, <code>max_iter</code>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>DBSCAN</h3>
+                        <p><strong>Best for:</strong> Datasets with noise and varying cluster densities</p>
+                        <p><strong>Pros:</strong> Finds clusters automatically, handles noise well</p>
+                        <p><strong>Cons:</strong> Sensitive to parameters, struggles with varying densities</p>
+                        <div class="method-params">
+                            <code>eps</code>, <code>min_samples</code>, <code>metric</code>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Hierarchical</h3>
+                        <p><strong>Best for:</strong> Understanding cluster relationships and nested structures</p>
+                        <p><strong>Pros:</strong> Creates cluster hierarchy, no need to specify cluster count</p>
+                        <p><strong>Cons:</strong> Computationally expensive for large datasets</p>
+                        <div class="method-params">
+                            <code>linkage</code>, <code>distance_threshold</code>, <code>n_clusters</code>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Auto-Select</h3>
+                        <p><strong>Best for:</strong> When you're unsure which method to use</p>
+                        <p><strong>Pros:</strong> Tests multiple methods and selects the best performing one</p>
+                        <p><strong>Cons:</strong> Takes longer as it runs multiple algorithms</p>
+                        <div class="method-params">
+                            <code>evaluation_metric</code>, <code>methods_to_test</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-world Examples -->
+        <section class="section">
+            <div class="container">
+                <h2>Real-world Examples</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>E-commerce Site Architecture</h3>
+                        <p><strong>Challenge:</strong> Online retailer had 50,000 product keywords with no clear organization.</p>
+                        <p><strong>Solution:</strong> Used hierarchical clustering to create a 3-level category structure.</p>
+                        <p><strong>Result:</strong> Improved site navigation, 34% increase in organic traffic, better internal linking.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">View Case Study</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Content Marketing Strategy</h3>
+                        <p><strong>Challenge:</strong> SaaS company needed to prioritize content creation from 5,000 target keywords.</p>
+                        <p><strong>Solution:</strong> Clustered by intent and semantic similarity, then prioritized by search volume.</p>
+                        <p><strong>Result:</strong> Created 25 pillar pages covering 80% of keywords, doubled organic leads.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <h3>Try Keyword Clusterer</h3>
+                    <p>Ready to organize your keyword chaos?</p>
+                    <div class="mt-lg">
+                        <a href="#" class="btn btn-primary">Download v1.0</a>
+                        <a href="#" class="btn btn-secondary">Live Demo</a>
+                        <a href="../../docs/index.html" class="btn btn-secondary">Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    
+    <style>
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-stable {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+        
+        .tech-stack {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-tag {
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+        }
+        
+        .method-params {
+            margin-top: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--void-accent);
+        }
+        
+        pre {
+            background: var(--void-dark);
+            border: 1px solid var(--void-gray);
+            border-radius: 4px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--void-white);
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VoidSEO! - Account Created</title>
+    <meta name="description" content="Your VoidSEO Free Tier account has been created successfully. Start exploring the VOID Loop methodology.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../community/index.html">Community</a></li>
+                <li><a href="../dashboard/free.html" class="nav-cta">Dashboard</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main class="success-main">
+        <div class="container">
+            <!-- Success Hero -->
+            <section class="success-hero" style="text-align: center; padding: 4rem 0;">
+                <div class="success-icon" style="font-size: 4rem; margin-bottom: 2rem;">🎉</div>
+                <h1 style="color: var(--void-accent); margin-bottom: 1rem;">Welcome to VoidSEO!</h1>
+                <p class="hero-subtitle" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Your Free Tier account has been created successfully
+                </p>
+                
+                <div class="success-badge" style="display: inline-block; background: rgba(0, 255, 153, 0.1); color: var(--void-accent); padding: 12px 24px; border-radius: 25px; font-size: 1rem; font-weight: 600; margin-bottom: 3rem; border: 1px solid var(--void-accent);">
+                    ✅ Account Active • Free Tier ▌
+                </div>
+            </section>
+
+            <!-- What's Next -->
+            <section class="whats-next" style="margin-bottom: 4rem;">
+                <h2 style="text-align: center; margin-bottom: 3rem;">What's Next?</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                    <div class="next-step-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-accent); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏠</div>
+                        <h3 style="color: var(--void-accent); margin-bottom: 1rem;">1. Explore Your Dashboard</h3>
+                        <p style="margin-bottom: 1.5rem;">Access your personalized dashboard with demo apps, community, and learning resources.</p>
+                        <a href="../dashboard/free.html" class="btn btn-primary">Go to Dashboard</a>
+                    </div>
+
+                    <div class="next-step-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-blue); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                        <h3 style="color: var(--void-blue); margin-bottom: 1rem;">2. Try Demo Apps</h3>
+                        <p style="margin-bottom: 1.5rem;">Explore PAA Explorer and AI Overview Detector with sample data.</p>
+                        <a href="../apps/paa-explorer/index.html#demo" class="btn btn-secondary">Try PAA Explorer</a>
+                    </div>
+
+                    <div class="next-step-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-red); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
+                        <h3 style="color: var(--void-red); margin-bottom: 1rem;">3. Learn the Method</h3>
+                        <p style="margin-bottom: 1.5rem;">Master the VOID Loop framework with our complete methodology guide.</p>
+                        <a href="../framework/index.html" class="btn btn-secondary">Learn VOID Loop</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Details -->
+            <section class="account-details" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; margin-bottom: 4rem;">
+                <h3 style="color: var(--void-accent); margin-bottom: 2rem; text-align: center;">Your Account Details</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="detail-item">
+                        <h4 style="color: var(--void-white); margin-bottom: 0.5rem;">📧 Email</h4>
+                        <p id="user-email" style="color: var(--void-light-gray); font-family: var(--font-mono);">Loading...</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4 style="color: var(--void-white); margin-bottom: 0.5rem;">🎯 Tier</h4>
+                        <p style="color: var(--void-accent); font-family: var(--font-mono);">Free Tier ▌</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4 style="color: var(--void-white); margin-bottom: 0.5rem;">📅 Created</h4>
+                        <p id="signup-date" style="color: var(--void-light-gray); font-family: var(--font-mono);">Today</p>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <h4 style="color: var(--void-white); margin-bottom: 0.5rem;">📨 Newsletter</h4>
+                        <p style="color: var(--void-accent);">✅ Subscribed</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Free Tier Benefits Reminder -->
+            <section class="benefits-reminder" style="text-align: center; background: linear-gradient(135deg, var(--void-gray) 0%, var(--void-dark) 100%); padding: 3rem; border-radius: 12px; border: 1px solid var(--void-accent);">
+                <h3 style="color: var(--void-accent); margin-bottom: 2rem;">Your Free Tier Includes</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="benefit-item" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <span style="font-size: 1.2rem;">🔍</span>
+                        <span>2 Demo Apps</span>
+                    </div>
+                    <div class="benefit-item" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <span style="font-size: 1.2rem;">📚</span>
+                        <span>Complete Framework</span>
+                    </div>
+                    <div class="benefit-item" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <span style="font-size: 1.2rem;">🧪</span>
+                        <span>Public Lab Access</span>
+                    </div>
+                    <div class="benefit-item" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <span style="font-size: 1.2rem;">💬</span>
+                        <span>Community Forum</span>
+                    </div>
+                    <div class="benefit-item" style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <span style="font-size: 1.2rem;">📨</span>
+                        <span>Monthly Newsletter</span>
+                    </div>
+                </div>
+                
+                <p style="margin-bottom: 1.5rem; color: var(--void-light-gray);">
+                    Ready for more? Upgrade to Builder ▌ for live data, unlimited access, and premium features.
+                </p>
+                
+                <a href="../upgrade/" class="btn btn-accent">🚀 Learn About Builder Tier</a>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions" style="margin-top: 4rem; text-align: center;">
+                <h3 style="margin-bottom: 2rem;">Quick Actions</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="../dashboard/free.html" class="btn btn-primary">📊 Go to Dashboard</a>
+                    <a href="../community/index.html" class="btn btn-secondary">💬 Join Community</a>
+                    <a href="../newsletter/index.html" class="btn btn-secondary">📨 Newsletter Settings</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Get user info and display
+            if (window.VoidSEOAuth) {
+                const user = await window.VoidSEOAuth.getCurrentUser();
+                if (user) {
+                    displayUserInfo(user);
+                } else {
+                    // If no user, redirect to login
+                    window.location.href = '../login/';
+                }
+            } else {
+                // Demo mode - show example data
+                displayUserInfo({
+                    email: 'demo@voidseo.dev',
+                    created_at: new Date().toISOString()
+                });
+            }
+        });
+
+        function displayUserInfo(user) {
+            const emailEl = document.getElementById('user-email');
+            const dateEl = document.getElementById('signup-date');
+            
+            if (emailEl) {
+                emailEl.textContent = user.email;
+            }
+            
+            if (dateEl) {
+                const date = new Date(user.created_at || new Date());
+                dateEl.textContent = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+        }
+
+        // Add some celebration animation
+        function addCelebrationEffect() {
+            const successIcon = document.querySelector('.success-icon');
+            if (successIcon) {
+                successIcon.style.animation = 'bounce 2s ease-in-out infinite';
+            }
+        }
+
+        // Add CSS for bounce animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% {
+                    transform: translateY(0);
+                }
+                40% {
+                    transform: translateY(-10px);
+                }
+                60% {
+                    transform: translateY(-5px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Start celebration
+        setTimeout(addCelebrationEffect, 500);
+    </script>
+</body>
+</html>

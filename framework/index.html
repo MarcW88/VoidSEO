@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The VOID Loop Framework — VoidSEO</title>
+    <meta name="description" content="A simple, repeatable framework to go from idea → workflow → learning → next idea. Turn intuition into robust, documented SEO automation.">
+    
+    
+    
+    <!-- SEO: Canonical and hreflang -->
+    <link rel="canonical" href="https://voidseo.dev/framework/">
+    <link rel="alternate" hreflang="en-BE" href="https://voidseo.dev/framework/">
+    <link rel="alternate" hreflang="x-default" href="https://voidseo.dev/framework/">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html" class="active">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../docs/index.html">Docs</a></li>
+                <li><a href="../pricing/index.html" class="nav-cta">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The VOID Loop</h1>
+                <p class="hero-subtitle">
+                    A simple, repeatable framework to go from idea → workflow → learning → next idea.
+                </p>
+                <p class="hero-microcopy">
+                    Most SEO/AI projects fail due to poor framing and lack of documentation. The VOID Loop restores discipline and transparency so every workflow is measurable and extensible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Navigation -->
+    <div class="container">
+        <nav class="sticky-nav">
+            <ul>
+                <li><a href="#what-is-void">What is the VOID Loop?</a></li>
+                <li><a href="#four-steps">The 4 steps</a></li>
+                <li><a href="#example">Example walkthrough</a></li>
+                <li><a href="#principles">Principles</a></li>
+                <li><a href="#quickstart">Quickstart</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <!-- What is the VOID Loop -->
+        <section class="section" id="what-is-void">
+            <div class="container">
+                <h2>What is the VOID Loop?</h2>
+                <p class="hero-subtitle">
+                    A simple, repeatable framework to go from idea → workflow → learning → next idea.
+                </p>
+                
+                <div class="void-cycle-svg">
+                    <svg width="400" height="400" viewBox="0 0 400 400" class="cycle-animation">
+                        <!-- Circular path -->
+                        <circle cx="200" cy="200" r="150" fill="none" stroke="var(--void-gray)" stroke-width="2" stroke-dasharray="5,5"/>
+                        
+                        <!-- Animated progress circle -->
+                        <circle cx="200" cy="200" r="150" fill="none" stroke="var(--void-accent)" stroke-width="3" 
+                                stroke-dasharray="942" stroke-dashoffset="942" class="progress-circle">
+                            <animate attributeName="stroke-dashoffset" values="942;0;942" dur="8s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- V - Vision (top) -->
+                        <g class="cycle-node" data-phase="vision">
+                            <circle cx="200" cy="50" r="25" fill="var(--void-dark)" stroke="var(--void-accent)" stroke-width="2"/>
+                            <text x="200" y="58" text-anchor="middle" fill="var(--void-accent)" font-family="var(--font-mono)" font-size="20" font-weight="bold">V</text>
+                            <text x="200" y="35" text-anchor="middle" fill="var(--void-white)" font-family="var(--font-mono)" font-size="12">Vision</text>
+                        </g>
+                        
+                        <!-- O - Objective (right) -->
+                        <g class="cycle-node" data-phase="objective">
+                            <circle cx="350" cy="200" r="25" fill="var(--void-dark)" stroke="var(--void-accent)" stroke-width="2"/>
+                            <text x="350" y="208" text-anchor="middle" fill="var(--void-accent)" font-family="var(--font-mono)" font-size="20" font-weight="bold">O</text>
+                            <text x="350" y="185" text-anchor="middle" fill="var(--void-white)" font-family="var(--font-mono)" font-size="12">Objective</text>
+                        </g>
+                        
+                        <!-- I - Implementation (bottom) -->
+                        <g class="cycle-node" data-phase="implementation">
+                            <circle cx="200" cy="350" r="25" fill="var(--void-dark)" stroke="var(--void-accent)" stroke-width="2"/>
+                            <text x="200" y="358" text-anchor="middle" fill="var(--void-accent)" font-family="var(--font-mono)" font-size="20" font-weight="bold">I</text>
+                            <text x="200" y="375" text-anchor="middle" fill="var(--void-white)" font-family="var(--font-mono)" font-size="12">Implementation</text>
+                        </g>
+                        
+                        <!-- D - Deep Dive (left) -->
+                        <g class="cycle-node" data-phase="deepdive">
+                            <circle cx="50" cy="200" r="25" fill="var(--void-dark)" stroke="var(--void-accent)" stroke-width="2"/>
+                            <text x="50" y="208" text-anchor="middle" fill="var(--void-accent)" font-family="var(--font-mono)" font-size="20" font-weight="bold">D</text>
+                            <text x="50" y="185" text-anchor="middle" fill="var(--void-white)" font-family="var(--font-mono)" font-size="12">Deep Dive</text>
+                        </g>
+                        
+                        <!-- Arrows -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--void-accent)"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Arrow V to O -->
+                        <path d="M 220 70 Q 320 100 330 180" fill="none" stroke="var(--void-accent)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+                        
+                        <!-- Arrow O to I -->
+                        <path d="M 330 220 Q 320 300 220 330" fill="none" stroke="var(--void-accent)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+                        
+                        <!-- Arrow I to D -->
+                        <path d="M 180 330 Q 80 300 70 220" fill="none" stroke="var(--void-accent)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+                        
+                        <!-- Arrow D to V -->
+                        <path d="M 70 180 Q 80 100 180 70" fill="none" stroke="var(--void-accent)" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+                        
+                        <!-- Center text -->
+                        <text x="200" y="195" text-anchor="middle" fill="var(--void-white)" font-family="var(--font-mono)" font-size="14" font-weight="bold">VOID</text>
+                        <text x="200" y="210" text-anchor="middle" fill="var(--void-light-gray)" font-family="var(--font-mono)" font-size="12">LOOP</text>
+                    </svg>
+                </div>
+
+                <div class="callout">
+                    <h4>Why it exists</h4>
+                    <p>
+                        Most SEO/AI projects fail due to poor framing and lack of documentation. The VOID Loop restores discipline and transparency so every workflow is measurable and extensible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 4 Steps -->
+        <section class="section" id="four-steps">
+            <div class="container">
+                <h2>The 4 Steps</h2>
+                
+                <!-- Vision -->
+                <div class="card mb-lg">
+                    <h3><span class="text-accent">V</span> — Vision</h3>
+                    
+                    <div class="grid grid-2">
+                        <div>
+                            <h4>Purpose</h4>
+                            <p>Identify what deserves automation. Observe patterns in data, user behavior, or internal processes.</p>
+                            
+                            <h4>Inputs</h4>
+                            <p>Signals, anomalies, pain points, recurring tasks, business questions.</p>
+                            
+                            <h4>Outputs</h4>
+                            <p>A short hypothesis + a problem statement.</p>
+                        </div>
+                        
+                        <div>
+                            <div class="callout">
+                                <h4>Checklist</h4>
+                                <ul>
+                                    <li>Describe the pattern in one sentence</li>
+                                    <li>Capture the source(s) of truth (GSC, SERP, CRM, support logs…)</li>
+                                    <li>Define who benefits (persona/team)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="callout warning">
+                                <h4>Pitfalls to avoid</h4>
+                                <ul>
+                                    <li>Starting from a tool, not a problem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-lg">
+                        <strong>Deliverable:</strong> 1-page brief (context, pattern, target impact)
+                        <br>
+                        <a href="../templates/html/VOID_Vision_Template.html" class="btn btn-secondary">Open the Vision template</a>
+                    </div>
+                </div>
+
+                <!-- Objective -->
+                <div class="card mb-lg">
+                    <h3><span class="text-accent">O</span> — Objective</h3>
+                    
+                    <div class="grid grid-2">
+                        <div>
+                            <h4>Purpose</h4>
+                            <p>Define inputs, outputs, constraints, and success metrics before writing a line of code.</p>
+                            
+                            <h4>Inputs</h4>
+                            <p>Vision brief.</p>
+                            
+                            <h4>Outputs</h4>
+                            <p>Spec sheet (parameters, data contracts, evaluation).</p>
+                        </div>
+                        
+                        <div>
+                            <div class="callout">
+                                <h4>Checklist</h4>
+                                <ul>
+                                    <li>Inputs listed (format, size, freshness)</li>
+                                    <li>Outputs defined (schema, granularity)</li>
+                                    <li>Metrics set (precision/recall, coverage, latency, cost)</li>
+                                    <li>Guardrails (limits, quotas, privacy)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="callout warning">
+                                <h4>Pitfalls</h4>
+                                <ul>
+                                    <li>Vague outputs</li>
+                                    <li>Measuring vanity, not value</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-lg">
+                        <strong>Deliverable:</strong> PRD (Problem → Requirements → Data → Metrics)
+                        <br>
+                        <a href="../templates/html/VOID_PRD_Template.html" class="btn btn-secondary">Open PRD template</a>
+                    </div>
+                </div>
+
+                <!-- Implementation -->
+                <div class="card mb-lg">
+                    <h3><span class="text-accent">I</span> — Implementation</h3>
+                    
+                    <div class="grid grid-2">
+                        <div>
+                            <h4>Purpose</h4>
+                            <p>Prototype, test, and iterate quickly. Build scripts, apps or workflows that meet the spec.</p>
+                            
+                            <h4>Inputs</h4>
+                            <p>PRD + sample data.</p>
+                            
+                            <h4>Outputs</h4>
+                            <p>A runnable module (script/app) with logs.</p>
+                        </div>
+                        
+                        <div>
+                            <div class="callout">
+                                <h4>Checklist</h4>
+                                <ul>
+                                    <li>Deterministic steps documented</li>
+                                    <li>Config via env/params (no hard-coding secrets)</li>
+                                    <li>Minimal tests (I/O sanity, schema checks)</li>
+                                    <li>Observability (timing, errors, usage)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="callout warning">
+                                <h4>Pitfalls</h4>
+                                <ul>
+                                    <li>Over-engineering the v1</li>
+                                    <li>Skipping tests</li>
+                                    <li>No logs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-lg">
+                        <strong>Deliverables:</strong> Module v0.1 + quick usage docs
+                        <br>
+                        <a href="../templates/html/VOID_Implementation_Checklist.html" class="btn btn-secondary">Open Checklist</a>
+                        <a href="../apps/index.html" class="btn btn-accent">Browse Apps</a>
+                    </div>
+                </div>
+
+                <!-- Deep Dive -->
+                <div class="card mb-lg">
+                    <h3><span class="text-accent">D</span> — Deep Dive</h3>
+                    
+                    <div class="grid grid-2">
+                        <div>
+                            <h4>Purpose</h4>
+                            <p>Evaluate, interpret, and document learnings. Turn results into reusable knowledge.</p>
+                            
+                            <h4>Inputs</h4>
+                            <p>Run outputs + metrics.</p>
+                            
+                            <h4>Outputs</h4>
+                            <p>Insights, decisions, next actions.</p>
+                        </div>
+                        
+                        <div>
+                            <div class="callout">
+                                <h4>Checklist</h4>
+                                <ul>
+                                    <li>Compare metrics to target</li>
+                                    <li>Note edge cases and failure modes</li>
+                                    <li>Make a keep/kill/iterate decision</li>
+                                    <li>Update docs/PRD based on findings</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="callout warning">
+                                <h4>Pitfalls</h4>
+                                <ul>
+                                    <li>Stopping at "it runs"</li>
+                                    <li>Not writing anything down</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-lg">
+                        <strong>Deliverables:</strong> Deep Dive note + issue backlog
+                        <br>
+                        <a href="../templates/html/VOID_Deep_Dive_Template.html" class="btn btn-secondary">Open Template</a>
+                        <a href="../lab/index.html" class="btn btn-accent">Explore the Lab</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Walkthrough -->
+        <section class="section" id="example">
+            <div class="container">
+                <h2>Example Walkthrough</h2>
+                
+                <div class="callout">
+                    <h4>Use case</h4>
+                    <p>Seasonal shifts in People Also Ask questions impact content coverage.</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Vision</h3>
+                        <p><strong>Hypothesis:</strong> PAA topics drift seasonally → track & cluster weekly.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Objective</h3>
+                        <p><strong>Inputs:</strong> seed keywords, locales<br>
+                        <strong>Outputs:</strong> clusters + drift metric<br>
+                        <strong>Metric:</strong> coverage% vs. seed intents</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Implementation</h3>
+                        <p>Python + Playwright scraper; embeddings clustering; weekly job; logs.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Deep Dive</h3>
+                        <p>Coverage increased +12%; identified 3 recurring clusters (care, sizing, materials). <strong>Next:</strong> integrate into editorial planning.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <a href="../apps/paa-explorer/index.html" class="btn btn-primary">Try the PAA Explorer (demo)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles -->
+        <section class="section" id="principles">
+            <div class="container">
+                <h2>Principles</h2>
+                
+                <div class="grid grid-2">
+                    <div class="callout">
+                        <h4>Clarity over hype</h4>
+                        <p>We document before we code.</p>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>Small steps, shipped</h4>
+                        <p>Prefer modules you can replace.</p>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>Observable by design</h4>
+                        <p>Logs, metrics, and explicit data contracts.</p>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>Ethical & private</h4>
+                        <p>Respect data boundaries; minimize collection.</p>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>Share the path</h4>
+                        <p>Show process, not only results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quickstart -->
+        <section class="section" id="quickstart">
+            <div class="container">
+                <h2>Quickstart</h2>
+                
+                <div class="callout">
+                    <h4>Getting Started</h4>
+                    <ul>
+                        <li>Pick a pattern you face weekly (e.g., clustering, PAA, internal links)</li>
+                        <li>Write a 1-page Vision → translate into a PRD</li>
+                        <li>Prototype a minimal module (v0.1) and run on a small sample</li>
+                        <li>Log metrics → write a Deep Dive note</li>
+                        <li>Iterate or discard. Repeat the Loop.</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <a href="../templates/index.html" class="btn btn-primary">Download All Templates</a>
+                    <a href="../apps/index.html" class="btn btn-secondary">See examples</a>
+                    <a href="../pricing/index.html" class="btn btn-accent">Join Community</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2>FAQ</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Pourquoi une méthode ?</h3>
+                        <p>Parce que sans cadre, l'automatisation devient une boîte noire fragile. La méthode garantit clarté, mesure, transfert.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Le VOID Loop est-il compatible no-code/low-code ?</h3>
+                        <p>Oui. Le cadre s'applique quel que soit l'outil (n8n, Sheets, Python, etc.).</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Puis-je utiliser vos modules avec mes données ?</h3>
+                        <p>Oui, nos apps priorisent la transparence et les paramètres d'entrée/sortie.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Open-source ?</h3>
+                        <p>Beaucoup de bases le sont. Les versions "Studio" ajoutent UX, observabilité et intégrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Ready to see the VOID Loop in action?</h2>
+            <p>Every app in our catalog was built using this exact methodology.</p>
+            <div class="mt-lg">
+                <a href="../apps/index.html" class="btn btn-primary">→ Explore Apps</a>
+                <a href="../lab/index.html" class="btn btn-secondary">View Experiments</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VoidSEO</title>
+    <meta name="description" content="Login to your VoidSEO account and access your dashboard.">
+    
+    <!-- SEO: Auth page - prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../docs/index.html">Docs</a></li>
+                <li><a href="../signup/" class="nav-cta">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1>Welcome Back</h1>
+                    <p class="auth-subtitle">
+                        Login to access your VoidSEO dashboard and continue your VOID Loop journey.
+                    </p>
+                </div>
+
+                <div class="auth-form-container">
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember" name="remember">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Login
+                        </button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>or</span>
+                    </div>
+
+                    <div class="auth-links">
+                        <p>Don't have an account? <a href="../signup/">Sign up for free</a></p>
+                        <p><a href="#" id="forgot-password">Forgot your password?</a></p>
+                    </div>
+                </div>
+
+                <!-- Password Reset Form (hidden by default) -->
+                <div id="reset-form-container" class="auth-form-container" style="display: none;">
+                    <form id="reset-form" class="auth-form">
+                        <h3>Reset Password</h3>
+                        <div class="form-group">
+                            <label for="reset-email">Email</label>
+                            <input type="email" id="reset-email" name="reset-email" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Reset Link
+                        </button>
+                        
+                        <button type="button" id="back-to-login" class="btn btn-secondary btn-full">
+                            Back to Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vision Template - VoidSEO</title>
+        
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { -webkit-print-color-adjust: exact; }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: #0a0a0a;
+            color: #00ff99;
+            padding: 30px;
+            margin: -20px -20px 40px -20px;
+            text-align: center;
+            border-radius: 0;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .header .subtitle {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            color: #cccccc;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .void-symbol {
+            color: #00ff99;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-weight: bold;
+        }
+        
+        .actions {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #00ff99;
+        }
+        
+        .btn {
+            background: #00ff99;
+            color: #0a0a0a;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 0 10px;
+            display: inline-block;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .btn:hover {
+            background: #00cc7a;
+        }
+        
+        h1 {
+            color: #0a0a0a;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            border-bottom: 3px solid #00ff99;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #0a0a0a;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            padding-left: 15px;
+            border-left: 5px solid #00ff99;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 25px 0 12px 0;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin: 12px 0;
+            text-align: justify;
+        }
+        
+        blockquote {
+            background: #e8f5e8;
+            border-left: 5px solid #00ff99;
+            margin: 25px 0;
+            padding: 20px 25px;
+            font-style: italic;
+            color: #2d5a2d;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        blockquote p {
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        ul, ol {
+            margin: 18px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            color: #d73a49;
+            font-weight: 600;
+        }
+        
+        pre {
+            background: #0a0a0a;
+            color: #00ff99;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            margin: 25px 0;
+            border: 1px solid #333;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        .fill-section {
+            background: #fff9e6;
+            border: 2px dashed #ffb84d;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .fill-section::before {
+            content: "✏️ FILL THIS SECTION";
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: #fff9e6;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #cc8800;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .fill-section p {
+            margin: 0;
+            color: #cc8800;
+            font-style: italic;
+        }
+        
+        .checkbox-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checkbox-list li {
+            position: relative;
+            padding-left: 35px;
+            margin: 12px 0;
+            background: #f8f9fa;
+            padding: 12px 12px 12px 35px;
+            border-radius: 6px;
+            border-left: 4px solid #00ff99;
+        }
+        
+        .checkbox-list li::before {
+            content: "☐";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            color: #00ff99;
+            font-weight: bold;
+            font-size: 16px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: #f8f9fa;
+            padding: 30px;
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+        
+        strong {
+            color: #0a0a0a;
+            font-weight: 700;
+        }
+        
+        em {
+            color: #555;
+            font-style: italic;
+        }
+        
+        hr {
+            border: none;
+            border-top: 3px solid #00ff99;
+            margin: 40px 0;
+            opacity: 0.3;
+        }
+        
+        .template-meta {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #00ff99;
+        }
+        
+        .template-meta h4 {
+            margin-top: 0;
+            color: #2d5a2d;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .tip {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 5px solid #17a2b8;
+        }
+    </style>
+    
+    </head>
+    <body>
+        <div class="header">
+            <h1>VoidSEO <span class="void-symbol">▌</span></h1>
+            <div class="subtitle">Vision Template</div>
+        </div>
+        
+        <div class="actions no-print">
+            <p><strong>💡 Pro tip:</strong> Use Cmd+P to print or save as PDF</p>
+            <a href="#" onclick="window.print()" class="btn">🖨️ Print Template</a>
+            <a href="../VOID_Loop_Templates_v1.zip" class="btn">📦 Download All Templates</a>
+        </div>
+        
+        <div class="template-meta">
+            <h4>About this template</h4>
+            <p>A 1-page brief to capture context, patterns, and target impact. Use this to clearly define your problem before starting any development work.</p>
+        </div>
+        
+        <div class="content">
+            <h1>VOID Loop — Vision (1‑Page Brief)</h1>
+<blockquote>
+<p>Purpose: Identify what deserves automation. Observe patterns in data, user behavior, or internal processes.</p>
+</blockquote>
+<h2>0) Meta</h2>
+<ul>
+<li><strong>Project/Module name:</strong> </li>
+</ul>
+<div class="fill-section"><p>Enter your project name here</p></div>
+
+<ul>
+<li><strong>Author / Team:</strong> </li>
+</ul>
+<div class="fill-section"><p>Enter author/team name here</p></div>
+
+<ul>
+<li><strong>Date:</strong> </li>
+</ul>
+<div class="fill-section"><p>Enter date here</p></div>
+
+<ul>
+<li><strong>Status:</strong> Draft | Final</li>
+</ul>
+<h2>1) Context (≤ 5 lines)</h2>
+<p>What’s happening? Where does this come from (GSC, SERP, CRM, support, logs…)?</p>
+<h2>2) Observed pattern (1 sentence)</h2>
+<p>State the pattern crisply. <em>E.g., “PAA topics drift seasonally for ‘trench femme’ queries.”</em></p>
+<h2>3) Problem statement (≤ 3 lines)</h2>
+<div class="fill-section"><p>What makes this worth solving? Impact on biz/users/process?</p></div>
+
+<h2>4) Source(s) of truth</h2>
+<ul>
+<li class="checkbox-item">☐ GSC view(s):  </li>
+<li class="checkbox-item">☐ SERP snapshots / keywords:  </li>
+<li class="checkbox-item">☐ Other datasets (CRM, CS tickets, logs):  </li>
+</ul>
+<h2>5) Beneficiaries</h2>
+<div class="fill-section"><p>Who benefits? Persona / team / use case.</p></div>
+
+<h2>6) Target impact (rough)</h2>
+<ul>
+<li>KPI(s): e.g., coverage %, crawl efficiency, time saved, errors reduced</li>
+<li>Scope: brand/site/locale(s)</li>
+</ul>
+<h2>7) Next step</h2>
+<p>Move to <strong>Objective</strong> (define inputs/outputs/metrics/guardrails).</p>
+<hr />
+<p><div class="warning"><strong>⚠️ Pitfall to avoid:</strong> Starting from a tool, not a problem.</div></p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>VoidSEO VOID Loop Templates</strong> • <span class="void-symbol">▌</span></p>
+            <p>Build smarter. Dive deeper. • <strong>voidseo.dev</strong></p>
+            <p>This template is part of the VOID Loop methodology for systematic SEO automation.</p>
+        </div>
+    </body>
+    </html>
+    

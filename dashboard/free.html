@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - VoidSEO</title>
+    <meta name="description" content="Your personal VoidSEO dashboard. Access your apps, track your progress, and explore the VOID Loop methodology.">
+    
+    <!-- SEO: Private page - prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/">Framework</a></li>
+                <li><a href="../apps/">Apps</a></li>
+                <li><a href="../lab/">Lab</a></li>
+                <li><a href="../docs/">Docs</a></li>
+                <li><a href="../pricing/">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../dashboard/free.html">Dashboard</a>
+                        <a href="../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Header -->
+            <section class="dashboard-header">
+                <div class="header-content">
+                    <h1 style="color: #ffffff !important; font-size: 2.5rem !important; font-weight: 700 !important; margin-bottom: 1rem !important;">👋 Hi, <span id="user-name">Marc</span> ▌</h1>
+                    <p class="header-subtitle">You're on Free. Follow the steps below to get value fast.</p>
+                    <div class="header-actions">
+                        <a href="../upgrade/" class="btn btn-primary">Upgrade to Builder ▌</a>
+                        <a href="../pricing/" class="link-secondary">View my plan</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Bar -->
+            <section class="progress-bar">
+                <div class="progress-steps">
+                    <div class="step completed">Account</div>
+                    <div class="step current">Run a demo</div>
+                    <div class="step">Read Quickstart</div>
+                    <div class="step">Join a thread</div>
+                </div>
+            </section>
+
+            <!-- 1. Get Started Checklist -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>1) Get started</h2>
+                    <div class="progress-indicator">
+                        <span class="progress-text">Progress: 25%</span>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checklist">
+                    <div class="checklist-item completed">
+                        <span class="checkbox">✅</span>
+                        <span class="item-text">Create your account</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checkbox">⬜</span>
+                        <span class="item-text">Run your first demo: PAA Explorer <span class="bonus">(+35%)</span></span>
+                        <a href="../apps/paa-explorer/" class="btn btn-sm btn-accent">Launch demo</a>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checkbox">⬜</span>
+                        <span class="item-text">Read the VOID Loop Quickstart <span class="bonus">(+20%)</span></span>
+                        <a href="../framework/" class="btn btn-sm btn-accent">Open Quickstart</a>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checkbox">⬜</span>
+                        <span class="item-text">Join a discussion <span class="bonus">(+10%)</span></span>
+                        <a href="../community/" class="btn btn-sm btn-accent">Go to Community</a>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>💡 Tip:</strong> Completing the checklist unlocks a Welcome Pack (extra Deep Dive PDF).
+                </div>
+            </section>
+
+            <!-- 2. Your Apps -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>2) Your Apps <span class="tier-badge">Free tier</span></h2>
+                    <p class="section-subtitle">You can use 2/15 apps in demo mode.<br><span class="muted">(Demo mode: sample data, no uploads.)</span></p>
+                </div>
+                
+                <div class="apps-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <h3>PAA Explorer</h3>
+                            <div class="pills">
+                                <span class="pill available">Available</span>
+                                <span class="pill demo">Demo data</span>
+                            </div>
+                        </div>
+                        <p class="app-description">Discover & cluster People Also Ask with sample keywords.</p>
+                        <div class="app-actions">
+                            <a href="../apps/paa-explorer/" class="btn btn-primary">Launch demo</a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-header">
+                            <h3>AI Overview Detector</h3>
+                            <div class="pills">
+                                <span class="pill available">Available</span>
+                                <span class="pill demo">Demo data</span>
+                            </div>
+                        </div>
+                        <p class="app-description">See which queries trigger AI Overviews in our sandbox.</p>
+                        <div class="app-actions">
+                            <a href="../apps/ai-overview-detector/" class="btn btn-primary">Try demo</a>
+                            <a href="../upgrade/" class="btn btn-ghost">Unlock full access</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="../apps/" class="link-muted">View all apps</a>
+            </section>
+
+            <!-- 3. Learn the Framework -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>3) Learn the Framework</h2>
+                    <p class="section-subtitle">VOID Loop methodology — free access</p>
+                </div>
+                
+                <div class="framework-grid">
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <h3>VOID Loop (Framework)</h3>
+                            <div class="pills">
+                                <span class="pill free">100% free</span>
+                                <span class="pill progress">Your progress: 45%</span>
+                            </div>
+                        </div>
+                        <a href="../framework/" class="btn btn-primary">Continue reading</a>
+                    </div>
+                    
+                    <div class="framework-card locked">
+                        <div class="framework-header">
+                            <h3>Templates & Downloads</h3>
+                            <div class="pills">
+                                <span class="pill locked">Builder required</span>
+                            </div>
+                        </div>
+                        <div class="locked-items">
+                            <span class="muted">Vision / PRD / Implementation / Deep Dive</span>
+                        </div>
+                        <a href="../upgrade/" class="btn btn-ghost">Unlock templates</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. The Lab -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>4) The Lab <span class="access-badge">read-only</span></h2>
+                    <p class="section-subtitle">Latest Deep Dives from the community.</p>
+                </div>
+                
+                <div class="lab-posts">
+                    <div class="lab-post">
+                        <h3>PAA Seasonal Analysis — Oct 2024</h3>
+                        <p>"We found 23% seasonal variation in PAA and built an automated monitor."</p>
+                        <div class="tags">
+                            <span class="tag">PAA</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <a href="../lab/paa-seasonal-analysis/" class="btn btn-secondary">Read Deep Dive</a>
+                    </div>
+                    
+                    <div class="lab-post">
+                        <h3>GSC Automation Framework — Sep 2024</h3>
+                        <p>"Automated GSC reports with anomaly detection and Slack alerts."</p>
+                        <div class="tags">
+                            <span class="tag">GSC</span>
+                            <span class="tag">API</span>
+                            <span class="tag">Alerts</span>
+                        </div>
+                        <a href="../lab/gsc-automation/" class="btn btn-secondary">Read Deep Dive</a>
+                    </div>
+                </div>
+                
+                <p class="muted">Want to submit your own? <a href="../upgrade/">Upgrade to Builder ▌</a></p>
+            </section>
+
+            <!-- 5. Community -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>5) Community</h2>
+                    <p class="section-subtitle">Today: 23 discussions · 8 new Deep Dives</p>
+                </div>
+                
+                <div class="community-posts">
+                    <div class="community-post">
+                        <h4>Best practices for VOID Loop documentation?</h4>
+                        <span class="post-meta">5 replies, 2h</span>
+                    </div>
+                    <div class="community-post">
+                        <h4>PAA clustering algorithm comparison</h4>
+                        <span class="post-meta">12 replies, 4h</span>
+                    </div>
+                </div>
+                
+                <a href="../community/" class="btn btn-secondary">Join discussion</a>
+                <p class="footnote">Free tier: up to 3 posts/week</p>
+            </section>
+
+            <!-- 6. Newsletter -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>6) Newsletter</h2>
+                    <p class="section-subtitle">You're subscribed to Deep Dive Monthly. Next issue: Nov 2024.</p>
+                </div>
+                
+                <div class="newsletter-actions">
+                    <a href="../newsletter/archives/" class="link-secondary">View archives</a>
+                    <a href="../newsletter/preferences/" class="link-secondary">Manage preferences</a>
+                </div>
+            </section>
+
+            <!-- 7. Your Access -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>7) Your Access <span class="tier-badge">Free</span></h2>
+                </div>
+                
+                <div class="access-stats">
+                    <div class="stat">
+                        <span class="stat-label">Apps:</span>
+                        <span class="stat-value">2 / 15</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Framework:</span>
+                        <span class="stat-value">100%</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Community posts:</span>
+                        <span class="stat-value">3 / week</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Newsletter:</span>
+                        <span class="stat-value">Active</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Sticky Upgrade Footer -->
+    <div class="upgrade-footer">
+        <div class="container">
+            <div class="upgrade-content">
+                <div class="upgrade-text">
+                    <h3>Ready to unlock everything?</h3>
+                    <p>Live data runs, templates & guides, private lab, unlimited posts, priority support.</p>
+                </div>
+                <div class="upgrade-actions">
+                    <a href="../upgrade/" class="btn btn-accent">Upgrade to Builder ▌ — $19/mo</a>
+                    <p class="upgrade-meta">Cancel anytime · 127 on waitlist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Dropdown Menu -->
+    <div class="user-dropdown" id="user-dropdown">
+        <div class="dropdown-header">
+            <div class="user-info">
+                <span id="dropdown-name">User</span>
+                <span class="user-tier">Free Tier</span>
+            </div>
+        </div>
+        <hr>
+        <a href="../upgrade/">Upgrade Account</a>
+        <a href="../newsletter/">Newsletter Settings</a>
+        <a href="#" id="logout-btn">Logout</a>
+    </div>
+
+    <style>
+        /* Dashboard Styles */
+        .dashboard-main {
+            padding: 2rem 0 8rem 0; /* Extra bottom padding for sticky footer */
+        }
+        
+        /* Force title visibility */
+        .dashboard-main h1,
+        .dashboard-header h1,
+        .header-content h1 {
+            color: #ffffff !important;
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            font-family: 'Space Mono', monospace !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--void-white) !important;
+            font-weight: 700 !important;
+            text-align: center;
+            font-family: var(--font-mono) !important;
+            z-index: 10;
+            position: relative;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--void-light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .link-secondary {
+            color: var(--void-accent);
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            margin-bottom: 3rem;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        .step {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+        }
+
+        .step.completed {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+
+        .step.current {
+            background: rgba(0, 255, 153, 0.2);
+            color: var(--void-accent);
+            border: 1px solid var(--void-accent);
+        }
+
+        /* Dashboard Sections */
+        .dashboard-section {
+            margin-bottom: 3rem;
+            background: var(--void-dark);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--void-gray);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            color: var(--void-white);
+            margin: 0;
+        }
+
+        .section-subtitle {
+            color: var(--void-light-gray);
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: var(--void-accent);
+            font-weight: 600;
+        }
+
+        .progress-bar-mini {
+            width: 100px;
+            height: 6px;
+            background: var(--void-gray);
+            border-radius: 3px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--void-accent);
+            border-radius: 3px;
+        }
+
+        /* Badges */
+        .tier-badge, .access-badge {
+            background: rgba(0, 255, 153, 0.1);
+            color: var(--void-accent);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Pills */
+        .pills {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pill {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .pill.available {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+
+        .pill.demo {
+            background: var(--void-blue);
+            color: var(--void-white);
+        }
+
+        .pill.free {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+
+        .pill.progress {
+            background: rgba(0, 255, 153, 0.2);
+            color: var(--void-accent);
+        }
+
+        .pill.locked {
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+        }
+
+        /* Checklist */
+        .checklist {
+            margin-bottom: 1.5rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--void-gray);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item.completed {
+            opacity: 0.7;
+        }
+
+        .checkbox {
+            font-size: 1.2rem;
+        }
+
+        .item-text {
+            flex: 1;
+            color: var(--void-white);
+        }
+
+        .bonus {
+            color: var(--void-accent);
+            font-weight: 600;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+        }
+
+        .btn-accent {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--void-accent);
+            border: 1px solid var(--void-accent);
+        }
+
+        .tip-box {
+            background: rgba(0, 255, 153, 0.1);
+            border: 1px solid var(--void-accent);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--void-white);
+            font-size: 0.9rem;
+        }
+
+        /* Apps Grid */
+        .apps-grid, .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-card, .framework-card {
+            background: var(--void-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .framework-card.locked {
+            opacity: 0.6;
+        }
+
+        .app-header, .framework-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .app-header h3, .framework-header h3 {
+            margin: 0;
+            color: var(--void-white);
+        }
+
+        .app-description {
+            color: var(--void-light-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .locked-items {
+            margin-bottom: 1rem;
+        }
+
+        .link-muted {
+            color: var(--void-light-gray);
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        /* Lab Posts */
+        .lab-posts {
+            margin-bottom: 1rem;
+        }
+
+        .lab-post {
+            background: var(--void-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lab-post h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--void-white);
+        }
+
+        .lab-post p {
+            color: var(--void-light-gray);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: rgba(0, 153, 255, 0.2);
+            color: var(--void-blue);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Community */
+        .community-posts {
+            margin-bottom: 1rem;
+        }
+
+        .community-post {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--void-gray);
+        }
+
+        .community-post:last-child {
+            border-bottom: none;
+        }
+
+        .community-post h4 {
+            margin: 0;
+            color: var(--void-white);
+            font-size: 1rem;
+        }
+
+        .post-meta {
+            color: var(--void-light-gray);
+            font-size: 0.8rem;
+        }
+
+        .footnote {
+            color: var(--void-light-gray);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Newsletter */
+        .newsletter-actions {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Access Stats */
+        .access-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--void-gray);
+            border-radius: 8px;
+        }
+
+        .stat-label {
+            color: var(--void-light-gray);
+        }
+
+        .stat-value {
+            color: var(--void-accent);
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        /* Sticky Upgrade Footer */
+        .upgrade-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--void-dark);
+            border-top: 2px solid var(--void-accent);
+            padding: 1rem 0;
+            z-index: 100;
+        }
+
+        .upgrade-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .upgrade-text h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--void-white);
+        }
+
+        .upgrade-text p {
+            margin: 0;
+            color: var(--void-light-gray);
+            font-size: 0.9rem;
+        }
+
+        .upgrade-actions {
+            text-align: right;
+        }
+
+        .upgrade-meta {
+            margin: 0.5rem 0 0 0;
+            color: var(--void-light-gray);
+            font-size: 0.8rem;
+        }
+
+        .muted {
+            color: var(--void-light-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .progress-steps {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .upgrade-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .header-actions {
+                flex-direction: column;
+            }
+
+            .checklist-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/nav-auth.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+</body>
+</html>

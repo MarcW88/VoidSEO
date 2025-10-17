@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Apps — VoidSEO</title>
+    <meta name="description" content="Production-ready SEO modules built with the VOID Loop methodology. PAA Explorer, AI Overview Detector, Keyword Clusterer, and more.">
+    
+    
+    
+    <!-- SEO: Canonical and hreflang -->
+    <link rel="canonical" href="https://voidseo.dev/apps/">
+    <link rel="alternate" hreflang="en-BE" href="https://voidseo.dev/apps/">
+    <link rel="alternate" hreflang="x-default" href="https://voidseo.dev/apps/">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html" class="active">Apps</a></li>
+                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../docs/index.html">Docs</a></li>
+                <li><a href="../pricing/index.html" class="nav-cta">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>SEO Apps</h1>
+                <p class="hero-subtitle">
+                    Explore our modular SEO apps — all built with The VOID Loop.
+                </p>
+                <p class="hero-microcopy">
+                    Transparent. Documented. Reusable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Filter/Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="text-center mb-lg">
+                    <div class="app-filters">
+                        <button class="btn btn-secondary active" data-filter="all">All Apps</button>
+                        <button class="btn btn-secondary" data-filter="research">Research</button>
+                        <button class="btn btn-secondary" data-filter="analysis">Analysis</button>
+                        <button class="btn btn-secondary" data-filter="monitoring">Monitoring</button>
+                        <button class="btn btn-secondary" data-filter="automation">Automation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-3" id="apps-grid">
+                    
+                    <!-- PAA Explorer -->
+                    <div class="card app-card" data-category="research">
+                        <div class="app-status">
+                            <span class="status-badge status-stable">Stable</span>
+                        </div>
+                        <h3>PAA Explorer</h3>
+                        <p class="app-description">
+                            Scrape and cluster People Also Ask questions to identify content gaps and seasonal trends.
+                        </p>
+                        <div class="app-phase">
+                            Phase: Implementation ▌ Stack: Python + Playwright + OpenAI
+                        </div>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Multi-locale PAA scraping</li>
+                                <li>Semantic clustering with embeddings</li>
+                                <li>Trend analysis & drift detection</li>
+                                <li>Export to CSV/JSON</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Playwright</span>
+                            <span class="tech-tag">OpenAI</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="paa-explorer/index.html" class="btn btn-primary">Explore</a>
+                            <a href="#" class="btn btn-secondary">Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- AI Overview Detector -->
+                    <div class="card app-card" data-category="monitoring">
+                        <div class="app-status">
+                            <span class="status-badge status-beta">Beta</span>
+                        </div>
+                        <h3>AI Overview Detector</h3>
+                        <p class="app-description">
+                            Monitor which queries trigger AI Overviews and analyze their impact on organic traffic.
+                        </p>
+                        <div class="app-phase">
+                            Phase: Implementation ▌ Stack: Python + Selenium + GSC API
+                        </div>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Automated SERP monitoring</li>
+                                <li>AI Overview detection & parsing</li>
+                                <li>Traffic impact correlation</li>
+                                <li>Alert system for new triggers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">GSC API</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="ai-overview-detector/index.html" class="btn btn-primary">Explore</a>
+                            <a href="#" class="btn btn-secondary">Join Beta</a>
+                        </div>
+                    </div>
+
+                    <!-- Keyword Clusterer -->
+                    <div class="card app-card" data-category="analysis">
+                        <div class="app-status">
+                            <span class="status-badge status-stable">Stable</span>
+                        </div>
+                        <h3>Keyword Clusterer</h3>
+                        <p class="app-description">
+                            Group keywords by semantic similarity and search intent using embeddings and clustering algorithms.
+                        </p>
+                        <div class="app-phase">
+                            Phase: Implementation ▌ Stack: Python + scikit-learn + OpenAI
+                        </div>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Multiple clustering algorithms</li>
+                                <li>Intent-based grouping</li>
+                                <li>Similarity scoring</li>
+                                <li>Interactive visualizations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">OpenAI</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="keyword-cluster/index.html" class="btn btn-primary">Explore</a>
+                            <a href="#" class="btn btn-secondary">Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- Internal Link Analyzer -->
+                    <div class="card app-card" data-category="analysis">
+                        <div class="app-status">
+                            <span class="status-badge status-alpha">Alpha</span>
+                        </div>
+                        <h3>Internal Link Analyzer</h3>
+                        <p class="app-description">
+                            Analyze internal linking patterns and identify opportunities for better link equity distribution.
+                        </p>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Site crawling & link mapping</li>
+                                <li>PageRank flow analysis</li>
+                                <li>Orphaned page detection</li>
+                                <li>Link opportunity suggestions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scrapy</span>
+                            <span class="tech-tag">NetworkX</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">Coming Soon</a>
+                        </div>
+                    </div>
+
+                    <!-- SERP Feature Tracker -->
+                    <div class="card app-card" data-category="monitoring">
+                        <div class="app-status">
+                            <span class="status-badge status-alpha">Alpha</span>
+                        </div>
+                        <h3>SERP Feature Tracker</h3>
+                        <p class="app-description">
+                            Track the evolution of SERP features across your keyword portfolio and identify new opportunities.
+                        </p>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Multi-feature detection</li>
+                                <li>Historical trend analysis</li>
+                                <li>Feature volatility scoring</li>
+                                <li>Opportunity alerts</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Playwright</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">Coming Soon</a>
+                        </div>
+                    </div>
+
+                    <!-- Content Gap Analyzer -->
+                    <div class="card app-card" data-category="research">
+                        <div class="app-status">
+                            <span class="status-badge status-planning">Planning</span>
+                        </div>
+                        <h3>Content Gap Analyzer</h3>
+                        <p class="app-description">
+                            Compare your content coverage against competitors and identify high-value content opportunities.
+                        </p>
+                        
+                        <div class="app-features">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Competitor content mapping</li>
+                                <li>Topic gap identification</li>
+                                <li>Search volume correlation</li>
+                                <li>Content priority scoring</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="app-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                        
+                        <div class="app-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">In Development</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Development Process -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Built with the VOID Loop</h2>
+                
+                <div class="callout">
+                    <h4>Our App Development Process</h4>
+                    <p>Every VoidSEO app follows the same rigorous development cycle:</p>
+                    <ul>
+                        <li><strong>Vision:</strong> Identify a real SEO problem worth solving</li>
+                        <li><strong>Objective:</strong> Define clear inputs, outputs, and success metrics</li>
+                        <li><strong>Implementation:</strong> Build with observability and extensibility in mind</li>
+                        <li><strong>Deep Dive:</strong> Analyze results, document learnings, iterate</li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-2 mt-lg">
+                    <div class="card">
+                        <h3>Open Source Core</h3>
+                        <p>All core algorithms and logic are open source. You can inspect, modify, and extend any app to fit your specific needs.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Studio Versions</h3>
+                        <p>Enhanced versions with better UX, advanced integrations, and enterprise features are available for teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Request an App -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Need a Custom App?</h2>
+                <p>Have a specific SEO workflow that needs automation? Let's build it together.</p>
+                
+                <div class="callout" style="max-width: 600px; margin: 2rem auto;">
+                    <h4>App Request Process</h4>
+                    <ul style="text-align: left;">
+                        <li>Submit your use case and requirements</li>
+                        <li>We'll create a Vision document together</li>
+                        <li>Build and test a prototype</li>
+                        <li>Release as open source for the community</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <a href="#" class="btn btn-primary">Request an App</a>
+                    <a href="../lab/index.html" class="btn btn-secondary">Browse Experiments</a>
+                </div>
+                
+                <div class="callout mt-lg">
+                    <h4>Want to understand our methodology?</h4>
+                    <p>Learn how we built these apps using the VOID Loop framework. Every tool follows the same disciplined approach.</p>
+                    <div class="mt-lg">
+                        <a href="../framework/index.html" class="btn btn-accent">→ Learn the Framework</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script>
+        // App filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const appCards = document.querySelectorAll('.app-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter apps
+                    appCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <style>
+        .app-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .app-card {
+            position: relative;
+        }
+        
+        .app-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-stable {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+        
+        .status-beta {
+            background: var(--void-blue);
+            color: var(--void-white);
+        }
+        
+        .status-alpha {
+            background: #ff9500;
+            color: var(--void-white);
+        }
+        
+        .status-planning {
+            background: var(--void-light-gray);
+            color: var(--void-white);
+        }
+        
+        .app-description {
+            margin-bottom: 1.5rem;
+            min-height: 3rem;
+        }
+        
+        .app-features h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--void-accent);
+        }
+        
+        .app-features ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-features li {
+            padding: 2px 0;
+            font-size: 0.8rem;
+            color: var(--void-light-gray);
+        }
+        
+        .app-features li::before {
+            content: '→ ';
+            color: var(--void-accent);
+        }
+        
+        .app-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tag {
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+        }
+        
+        .app-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .app-actions .btn {
+            flex: 1;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .app-phase {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--void-light-gray);
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: var(--void-gray);
+            border-radius: 4px;
+            border-left: 3px solid var(--void-accent);
+        }
+        
+        @media (max-width: 768px) {
+            .app-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .app-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

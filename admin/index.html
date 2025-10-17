@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VoidSEO</title>
+    <meta name="description" content="VoidSEO Admin Dashboard - Monitor signups, user activity, and system metrics.">
+    
+    <!-- SEO: Admin page - prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">VoidSEO Admin</a>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="../" class="nav-cta">← Back to Site</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main class="admin-main" style="padding-top: 80px;">
+        <div class="container">
+            <!-- Admin Header -->
+            <section class="admin-header" style="margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h1 style="margin-bottom: 0.5rem;">Admin Dashboard</h1>
+                        <p style="color: var(--void-light-gray); margin: 0;">Monitor VoidSEO Free Tier performance</p>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <button id="refresh-data" class="btn btn-secondary">🔄 Refresh</button>
+                        <button id="export-data" class="btn btn-accent">📊 Export</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Metrics -->
+            <section class="metrics-overview" id="overview" style="margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem;">Key Metrics</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div class="metric-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-accent); text-align: center;">
+                        <div class="metric-icon" style="font-size: 2rem; margin-bottom: 1rem;">👥</div>
+                        <div class="metric-number" id="total-users" style="font-size: 2.5rem; font-weight: bold; color: var(--void-accent); font-family: var(--font-mono);">127</div>
+                        <div class="metric-label" style="color: var(--void-light-gray); font-size: 0.9rem;">Total Users</div>
+                        <div class="metric-change" style="color: var(--void-accent); font-size: 0.8rem; margin-top: 0.5rem;">+12 this week</div>
+                    </div>
+
+                    <div class="metric-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-blue); text-align: center;">
+                        <div class="metric-icon" style="font-size: 2rem; margin-bottom: 1rem;">📅</div>
+                        <div class="metric-number" id="daily-signups" style="font-size: 2.5rem; font-weight: bold; color: var(--void-blue); font-family: var(--font-mono);">8</div>
+                        <div class="metric-label" style="color: var(--void-light-gray); font-size: 0.9rem;">Today's Signups</div>
+                        <div class="metric-change" style="color: var(--void-blue); font-size: 0.8rem; margin-top: 0.5rem;">+3 vs yesterday</div>
+                    </div>
+
+                    <div class="metric-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-red); text-align: center;">
+                        <div class="metric-icon" style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                        <div class="metric-number" id="active-users" style="font-size: 2.5rem; font-weight: bold; color: var(--void-red); font-family: var(--font-mono);">89</div>
+                        <div class="metric-label" style="color: var(--void-light-gray); font-size: 0.9rem;">Active Users (7d)</div>
+                        <div class="metric-change" style="color: var(--void-red); font-size: 0.8rem; margin-top: 0.5rem;">70% retention</div>
+                    </div>
+
+                    <div class="metric-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--void-accent); text-align: center;">
+                        <div class="metric-icon" style="font-size: 2rem; margin-bottom: 1rem;">📨</div>
+                        <div class="metric-number" id="newsletter-subs" style="font-size: 2.5rem; font-weight: bold; color: var(--void-accent); font-family: var(--font-mono);">104</div>
+                        <div class="metric-label" style="color: var(--void-light-gray); font-size: 0.9rem;">Newsletter Subs</div>
+                        <div class="metric-change" style="color: var(--void-accent); font-size: 0.8rem; margin-top: 0.5rem;">82% opt-in rate</div>
+                    </div>
+                </div>
+
+                <!-- Signup Chart -->
+                <div class="chart-container" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                    <h3 style="margin-bottom: 2rem; color: var(--void-white);">Signups Over Time</h3>
+                    <div id="signup-chart" style="height: 300px; background: var(--void-black); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--void-light-gray);">
+                        📈 Chart will be displayed here (integrate with Chart.js or similar)
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management -->
+            <section class="user-management" id="users" style="margin-bottom: 4rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                    <h2>User Management</h2>
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" id="user-search" placeholder="Search users..." 
+                               style="padding: 8px 12px; background: var(--void-dark); border: 1px solid var(--void-gray); border-radius: 4px; color: var(--void-white);">
+                        <select id="user-filter" style="padding: 8px 12px; background: var(--void-dark); border: 1px solid var(--void-gray); border-radius: 4px; color: var(--void-white);">
+                            <option value="all">All Users</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="newsletter">Newsletter Subs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="users-table-container" style="background: var(--void-dark); border-radius: 8px; overflow: hidden;">
+                    <table class="users-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--void-black);">
+                                <th style="padding: 1rem; text-align: left; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">User</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Email</th>
+                                <th style="padding: 1rem; text-align: center; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Tier</th>
+                                <th style="padding: 1rem; text-align: center; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Signup Date</th>
+                                <th style="padding: 1rem; text-align: center; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Last Active</th>
+                                <th style="padding: 1rem; text-align: center; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Newsletter</th>
+                                <th style="padding: 1rem; text-align: center; color: var(--void-white); border-bottom: 1px solid var(--void-gray);">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body">
+                            <!-- Users will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem;">
+                    <button id="prev-page" class="btn btn-secondary" disabled>← Previous</button>
+                    <span id="page-info" style="color: var(--void-light-gray);">Page 1 of 3</span>
+                    <button id="next-page" class="btn btn-secondary">Next →</button>
+                </div>
+            </section>
+
+            <!-- Analytics -->
+            <section class="analytics-section" id="analytics" style="margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem;">Analytics & Insights</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="analytics-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                        <h3 style="color: var(--void-accent); margin-bottom: 1rem;">🎯 Conversion Funnel</h3>
+                        <div class="funnel-stats">
+                            <div class="funnel-step" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Visitors</span>
+                                <span style="color: var(--void-accent);">2,847</span>
+                            </div>
+                            <div class="funnel-step" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Signup Page Views</span>
+                                <span style="color: var(--void-accent);">456 (16%)</span>
+                            </div>
+                            <div class="funnel-step" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Signups</span>
+                                <span style="color: var(--void-accent);">127 (28%)</span>
+                            </div>
+                            <div class="funnel-step" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Dashboard Visits</span>
+                                <span style="color: var(--void-accent);">89 (70%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                        <h3 style="color: var(--void-blue); margin-bottom: 1rem;">📱 Popular Features</h3>
+                        <div class="feature-stats">
+                            <div class="feature-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>PAA Explorer Demo</span>
+                                <span style="color: var(--void-blue);">78%</span>
+                            </div>
+                            <div class="feature-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Framework Reading</span>
+                                <span style="color: var(--void-blue);">65%</span>
+                            </div>
+                            <div class="feature-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Community Forum</span>
+                                <span style="color: var(--void-blue);">43%</span>
+                            </div>
+                            <div class="feature-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Lab Deep Dives</span>
+                                <span style="color: var(--void-blue);">38%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                        <h3 style="color: var(--void-red); margin-bottom: 1rem;">🚀 Upgrade Interest</h3>
+                        <div class="upgrade-stats">
+                            <div class="upgrade-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Upgrade Page Views</span>
+                                <span style="color: var(--void-red);">34</span>
+                            </div>
+                            <div class="upgrade-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Waitlist Signups</span>
+                                <span style="color: var(--void-red);">23</span>
+                            </div>
+                            <div class="upgrade-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Conversion Rate</span>
+                                <span style="color: var(--void-red);">18%</span>
+                            </div>
+                            <div class="upgrade-item" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Avg. Time to Interest</span>
+                                <span style="color: var(--void-red);">3.2 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings -->
+            <section class="settings-section" id="settings" style="margin-bottom: 4rem;">
+                <h2 style="margin-bottom: 2rem;">System Settings</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                    <div class="settings-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                        <h3 style="color: var(--void-accent); margin-bottom: 1rem;">🔧 System Status</h3>
+                        <div class="status-items">
+                            <div class="status-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <span>Authentication</span>
+                                <span style="color: var(--void-accent);">✅ Active</span>
+                            </div>
+                            <div class="status-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <span>Database</span>
+                                <span style="color: var(--void-accent);">✅ Connected</span>
+                            </div>
+                            <div class="status-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <span>Newsletter Service</span>
+                                <span style="color: var(--void-accent);">✅ Active</span>
+                            </div>
+                            <div class="status-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <span>Demo Mode</span>
+                                <span style="color: var(--void-blue);">ℹ️ Enabled</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card" style="background: var(--void-dark); padding: 2rem; border-radius: 8px;">
+                        <h3 style="color: var(--void-blue); margin-bottom: 1rem;">⚙️ Configuration</h3>
+                        <div class="config-items">
+                            <div class="config-item" style="margin-bottom: 1rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: var(--void-white);">Max Free Tier Users</label>
+                                <input type="number" value="1000" style="width: 100%; padding: 8px 12px; background: var(--void-black); border: 1px solid var(--void-gray); border-radius: 4px; color: var(--void-white);">
+                            </div>
+                            <div class="config-item" style="margin-bottom: 1rem;">
+                                <label style="display: block; margin-bottom: 0.5rem; color: var(--void-white);">Community Posts Limit</label>
+                                <input type="number" value="3" style="width: 100%; padding: 8px 12px; background: var(--void-black); border: 1px solid var(--void-gray); border-radius: 4px; color: var(--void-white);">
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;">Save Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO Admin. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+        
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+        
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

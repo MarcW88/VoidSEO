@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation — VoidSEO</title>
+    <meta name="description" content="Complete documentation for VoidSEO tools, the VOID Loop framework, and API references.">
+    
+    
+    
+    <!-- SEO: Canonical and hreflang -->
+    <link rel="canonical" href="https://voidseo.dev/docs/">
+    <link rel="alternate" hreflang="en-BE" href="https://voidseo.dev/docs/">
+    <link rel="alternate" hreflang="x-default" href="https://voidseo.dev/docs/">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../docs/index.html" class="active">Docs</a></li>
+                <li><a href="../pricing/index.html" class="nav-cta">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Documentation</h1>
+                <p class="hero-subtitle">
+                    Complete guides, API references, and tutorials for VoidSEO tools and the VOID Loop framework.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Quick Links -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>🚀 Getting Started</h3>
+                        <p>New to VoidSEO? Start here with our quick setup guide and first workflow.</p>
+                        <div class="mt-lg">
+                            <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>📚 VOID Loop Guide</h3>
+                        <p>Complete methodology documentation with examples and templates.</p>
+                        <div class="mt-lg">
+                            <a href="../framework/index.html" class="btn btn-secondary">Framework</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔧 API Reference</h3>
+                        <p>Technical documentation for all VoidSEO tools and integrations.</p>
+                        <div class="mt-lg">
+                            <a href="#api-reference" class="btn btn-secondary">API Docs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="section" id="getting-started">
+            <div class="container">
+                <h2>Getting Started</h2>
+                
+                <div class="callout">
+                    <h4>Prerequisites</h4>
+                    <ul>
+                        <li>Python 3.8+ installed</li>
+                        <li>Basic understanding of SEO concepts</li>
+                        <li>OpenAI API key (for AI-powered features)</li>
+                    </ul>
+                </div>
+                
+                <h3>Installation</h3>
+                <pre><code># Clone the VoidSEO tools repository
+git clone https://github.com/voidseo/tools.git
+cd tools
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys</code></pre>
+                
+                <h3>Your First Workflow</h3>
+                <p>Let's create a simple PAA analysis workflow following the VOID Loop:</p>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h4>1. Vision</h4>
+                        <p>Identify content gaps in your niche by analyzing People Also Ask questions.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>2. Objective</h4>
+                        <p>Input: 10 seed keywords. Output: Clustered PAA questions with content opportunities.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>3. Implementation</h4>
+                        <pre><code>from voidseo import PAAExplorer
+
+explorer = PAAExplorer()
+questions = explorer.scrape(['your', 'keywords'])
+clusters = explorer.cluster(questions)
+explorer.export_csv(clusters)</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>4. Deep Dive</h4>
+                        <p>Analyze the clusters, identify high-value opportunities, and plan your content strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Sections -->
+        <section class="section">
+            <div class="container">
+                <h2>Documentation Sections</h2>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <h3>Framework & Methodology</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="../framework/index.html">The VOID Loop Framework</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Vision Templates</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">PRD Templates</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Best Practices</a></li>
+                            <li style="padding: 8px 0;"><a href="#">Case Studies</a></li>
+                        </ul>
+                        
+                        <h3>Tools & Apps</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="../apps/paa-explorer/index.html">PAA Explorer</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">AI Overview Detector</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Keyword Clusterer</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Internal Link Analyzer</a></li>
+                            <li style="padding: 8px 0;"><a href="#">SERP Feature Tracker</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>API Reference</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#api-authentication">Authentication</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#api-endpoints">Endpoints</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#api-rate-limits">Rate Limits</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#api-errors">Error Handling</a></li>
+                            <li style="padding: 8px 0;"><a href="#api-examples">Code Examples</a></li>
+                        </ul>
+                        
+                        <h3>Integrations</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Google Sheets</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Zapier</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">n8n</a></li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid var(--void-gray);"><a href="#">Notion</a></li>
+                            <li style="padding: 8px 0;"><a href="#">Custom Webhooks</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Reference Preview -->
+        <section class="section" id="api-reference">
+            <div class="container">
+                <h2>API Reference</h2>
+                
+                <div class="callout">
+                    <h4>Base URL</h4>
+                    <p><code>https://api.voidseo.dev/v1</code></p>
+                </div>
+                
+                <h3>Authentication</h3>
+                <p>All API requests require authentication using your API key:</p>
+                <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://api.voidseo.dev/v1/paa/scrape</code></pre>
+                
+                <h3>Common Endpoints</h3>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h4>POST /paa/scrape</h4>
+                        <p>Scrape PAA questions for given keywords</p>
+                        <pre><code>{
+  "keywords": ["seo tools", "keyword research"],
+  "locale": "en-US",
+  "max_questions": 10
+}</code></pre>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>POST /cluster/semantic</h4>
+                        <p>Cluster questions by semantic similarity</p>
+                        <pre><code>{
+  "questions": ["array", "of", "questions"],
+  "algorithm": "kmeans",
+  "n_clusters": "auto"
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <a href="#" class="btn btn-primary">View Complete API Docs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Need Help?</h2>
+                <p>Can't find what you're looking for? We're here to help.</p>
+                
+                <div class="grid grid-3 mt-lg">
+                    <div class="card">
+                        <h3>Community</h3>
+                        <p>Join our Discord community for questions, discussions, and support.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">Join Discord</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>GitHub Issues</h3>
+                        <p>Report bugs, request features, or contribute to our open source tools.</p>
+                        <div class="mt-lg">
+                            <a href="https://github.com/voidseo" class="btn btn-secondary">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Email Support</h3>
+                        <p>For technical support and enterprise inquiries.</p>
+                        <div class="mt-lg">
+                            <a href="mailto:support@voidseo.dev" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+</body>
+</html>

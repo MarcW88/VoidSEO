@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — VoidSEO</title>
+    <meta name="description" content="Join the VOID Loop community. Access advanced SEO tools, workflows, and a community of builders exploring automation.">
+    
+    
+    
+    <!-- SEO: Canonical and hreflang -->
+    <link rel="canonical" href="https://voidseo.dev/pricing/">
+    <link rel="alternate" hreflang="en-BE" href="https://voidseo.dev/pricing/">
+    <link rel="alternate" hreflang="x-default" href="https://voidseo.dev/pricing/">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/">Framework</a></li>
+                <li><a href="../apps/">Apps</a></li>
+                <li><a href="../lab/">Lab</a></li>
+                <li><a href="../docs/">Docs</a></li>
+                <li><a href="../pricing/" class="active">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../dashboard/free.html">Dashboard</a>
+                        <a href="../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Join the Loop</h1>
+                <p class="hero-subtitle">
+                    Join 100+ SEO builders exploring automation with The VOID Loop.
+                </p>
+                <p class="hero-microcopy">
+                    Not just tools. A methodology, a community, and a living ecosystem of SEO automation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Pricing Plans -->
+        <section class="section">
+            <div class="container">
+                <div class="pricing-grid">
+                    
+                    <!-- Free Plan -->
+                    <div class="pricing-card free-plan">
+                        <div class="plan-header">
+                            <h3>Discover</h3>
+                            <div class="price">
+                                <span class="amount">Free</span>
+                            </div>
+                            <p class="plan-subtitle">For curious minds and testers</p>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <ul>
+                                <li>✅ Access to 2 free apps</li>
+                                <li>✅ Complete VOID Loop framework</li>
+                                <li>✅ Public Lab access (read-only)</li>
+                                <li>✅ Monthly "Deep Dive" newsletter</li>
+                                <li>✅ Community forum access</li>
+                                <li>❌ Premium apps</li>
+                                <li>❌ Workflow templates</li>
+                                <li>❌ Private Discord</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="plan-cta">
+                            <a href="../signup/" class="btn btn-secondary full-width">Start Free</a>
+                        </div>
+                    </div>
+
+                    <!-- Builder Plan -->
+                    <div class="pricing-card builder-plan popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="coming-soon-badge">Launching Soon</div>
+                        <div class="plan-header">
+                            <h3>Builder</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">19</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p class="plan-subtitle">For freelances & makers</p>
+                            <p class="early-bird">🚀 Join waitlist for 50% off launch price</p>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <ul>
+                                <li>✅ Access to all apps</li>
+                                <li>✅ n8n & Python workflow examples</li>
+                                <li>✅ PRD + Vision templates</li>
+                                <li>✅ Online app execution (quota)</li>
+                                <li>✅ Private Discord community</li>
+                                <li>✅ Early access to experiments</li>
+                                <li>✅ "Builder ▌" badge & profile</li>
+                                <li>✅ Cloneable workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="plan-cta">
+                            <button onclick="openWaitlistModal('builder')" class="btn btn-primary full-width">🚀 Join Waitlist - 50% Off</button>
+                            <p class="trial-info">Be the first to get access + exclusive launch discount</p>
+                        </div>
+                    </div>
+
+                    <!-- Studio Plan -->
+                    <div class="pricing-card studio-plan">
+                        <div class="coming-soon-badge">Launching Soon</div>
+                        <div class="plan-header">
+                            <h3>Studio</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">49</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p class="plan-subtitle">For agencies & teams</p>
+                            <p class="early-bird">🎯 Early access + founder pricing</p>
+                        </div>
+                        
+                        <div class="plan-features">
+                            <ul>
+                                <li>✅ Everything in Builder</li>
+                                <li>✅ API & connectors (GSC, Sheets, Notion)</li>
+                                <li>✅ Custom analytics & logs</li>
+                                <li>✅ Priority access to new modules</li>
+                                <li>✅ Monthly live workshops</li>
+                                <li>✅ Contributors page mention</li>
+                                <li>✅ Publish in Lab (co-signature)</li>
+                                <li>✅ Priority support</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="plan-cta">
+                            <button onclick="openWaitlistModal('studio')" class="btn btn-accent full-width">🎯 Join Studio Waitlist</button>
+                            <p class="trial-info">Exclusive founder pricing for early adopters</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="enterprise-plan">
+                    <div class="card">
+                        <div class="grid grid-2">
+                            <div>
+                                <h3>Partner</h3>
+                                <p>Custom integrations, team training, source code access, and roadmap priority for enterprises.</p>
+                            </div>
+                            <div class="text-center">
+                                <button onclick="openWaitlistModal('partner')" class="btn btn-secondary">Join Partner Program</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Why Join the Loop?</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>🧠 Methodology First</h3>
+                        <p>Learn the VOID Loop framework that turns SEO intuition into systematic, documented workflows. No more black boxes.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🛠️ Living Toolbox</h3>
+                        <p>Access a growing collection of apps, templates, and workflows. All transparent, all extensible, all documented.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🤝 Expert Community</h3>
+                        <p>Connect with SEO engineers, data scientists, and automation experts. Share experiments, get feedback, build together.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>⚡ Time Saved</h3>
+                        <p>Skip the research phase. Get proven workflows, tested code, and documented processes ready to deploy.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔬 Early Access</h3>
+                        <p>See experiments before they become apps. Influence the roadmap. Test cutting-edge SEO automation.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>📈 Recognition</h3>
+                        <p>Publish your own Deep Dives, get featured in the Lab, build your reputation in the SEO engineering community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Features -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Community Features</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Private Discord Channels</h3>
+                        <p>Organized by VOID Loop phases:</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li style="padding: 4px 0;">💡 <strong>#vision</strong> — Share project ideas</li>
+                            <li style="padding: 4px 0;">🎯 <strong>#objective</strong> — Define specs together</li>
+                            <li style="padding: 4px 0;">⚙️ <strong>#implementation</strong> — Code & scripts</li>
+                            <li style="padding: 4px 0;">📊 <strong>#deep-dive</strong> — Results & learnings</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Cloneable Workflows</h3>
+                        <p>Ready-to-use automation:</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li style="padding: 4px 0;">📋 <strong>GSC Fan-Out Audit</strong> — n8n workflow</li>
+                            <li style="padding: 4px 0;">🔍 <strong>PAA Trend Monitor</strong> — Python script</li>
+                            <li style="padding: 4px 0;">📈 <strong>SERP Change Detector</strong> — API workflow</li>
+                            <li style="padding: 4px 0;">🤖 <strong>Content Gap Analyzer</strong> — LLM prompts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h4>Can I cancel anytime?</h4>
+                        <p>Yes, absolutely. Cancel anytime from your dashboard. No questions asked, no hidden fees.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>What's included in the free trial?</h4>
+                        <p>Full access to your chosen plan for 7-14 days. No credit card required for the Discover plan.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Do you offer student discounts?</h4>
+                        <p>Yes! 50% off Builder plan for students. Contact us with your .edu email for verification.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Can I upgrade or downgrade?</h4>
+                        <p>Absolutely. Change plans anytime from your dashboard. Prorated billing applies.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Is the source code really open?</h4>
+                        <p>Core algorithms and methodology are open source. Premium features add UX, integrations, and hosting.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>What if I need custom integrations?</h4>
+                        <p>Partner plan includes custom development. We can build specific integrations for your workflow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Ready to Join the Loop?</h2>
+                <p>Start building smarter SEO workflows today.</p>
+                
+                <div class="cta-buttons mt-lg">
+                    <a href="#" class="btn btn-secondary">Start Free</a>
+                    <button onclick="openWaitlistModal('builder')" class="btn btn-primary">🚀 Join Builder Waitlist</button>
+                </div>
+                
+                <!-- Waitlist Progress -->
+                <div class="waitlist-progress mt-lg">
+                    <h4>🎯 Launch Goal: 500 Early Adopters</h4>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 23%"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span class="current-count">117</span> / 500 joined
+                        </div>
+                    </div>
+                    <p class="progress-message">You'll be #<span id="user-position">118</span> in line! 🚀</p>
+                </div>
+                
+                <p class="text-muted mt-lg">
+                    Join 100+ SEO professionals already building with the VOID Loop methodology.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWaitlistModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2>🚀 Join the VoidSEO Waitlist</h2>
+                <p id="modal-plan-info">Get exclusive early access + 50% off launch pricing</p>
+            </div>
+            
+            <form id="waitlistForm" class="waitlist-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Name (Optional)</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="use-case">What will you use VoidSEO for? (Optional)</label>
+                    <select id="use-case" name="use-case">
+                        <option value="">Select your use case</option>
+                        <option value="freelance">Freelance SEO</option>
+                        <option value="agency">Agency work</option>
+                        <option value="inhouse">In-house SEO</option>
+                        <option value="personal">Personal projects</option>
+                        <option value="research">SEO research</option>
+                    </select>
+                </div>
+                
+                <div class="benefits">
+                    <h4>🎁 Early Adopter Benefits:</h4>
+                    <ul>
+                        <li>✅ 50% off first 3 months</li>
+                        <li>✅ Exclusive "Founder" badge</li>
+                        <li>✅ Direct feedback channel</li>
+                        <li>✅ Free migration assistance</li>
+                        <li>✅ Lifetime discount lock-in</li>
+                    </ul>
+                </div>
+                
+                <button type="submit" class="btn btn-primary full-width">
+                    🚀 Join Waitlist - Position #<span id="position-number">118</span>
+                </button>
+                
+                <p class="form-note">
+                    No spam, ever. Updates only when we launch + exclusive content.
+                </p>
+            </form>
+            
+            <div id="success-message" class="success-message" style="display: none;">
+                <h3>🎉 Welcome to the VoidSEO family!</h3>
+                <p>You're now #<span id="final-position">118</span> in line.</p>
+                <p>Check your email for your early adopter welcome package!</p>
+                <button onclick="closeWaitlistModal()" class="btn btn-accent">Continue Exploring</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/waitlist.js"></script>
+    
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            background: var(--void-dark);
+            border: 2px solid var(--void-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--void-accent);
+            transform: translateY(-4px);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--void-accent);
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--void-accent);
+            color: var(--void-black);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .coming-soon-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #ff6b35;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .early-bird {
+            color: #ff6b35;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .currency {
+            font-size: 1.2rem;
+            color: var(--void-light-gray);
+        }
+        
+        .amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--void-accent);
+            margin: 0 4px;
+        }
+        
+        .period {
+            font-size: 1rem;
+            color: var(--void-light-gray);
+        }
+        
+        .plan-subtitle {
+            color: var(--void-light-gray);
+            font-size: 0.9rem;
+        }
+        
+        .plan-features ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--void-gray);
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .full-width {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .trial-info {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--void-light-gray);
+            margin-top: 0.5rem;
+        }
+        
+        .enterprise-plan {
+            margin-top: 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Waitlist Progress */
+        .waitlist-progress {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--void-accent);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .waitlist-progress h4 {
+            margin-bottom: 20px;
+            color: var(--void-accent);
+            text-align: center;
+        }
+        
+        .progress-container {
+            margin-bottom: 15px;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, var(--void-accent), #00cc7a);
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.3s ease;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        .progress-stats {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--void-accent);
+        }
+        
+        .progress-message {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: var(--void-dark);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            border: 2px solid var(--void-accent);
+        }
+        
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: var(--void-light-gray);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover {
+            color: var(--void-accent);
+        }
+        
+        .modal-header {
+            background: var(--void-accent);
+            color: var(--void-black);
+            padding: 25px 30px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+        
+        .modal-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        
+        .modal-header p {
+            margin: 0;
+            color: var(--void-light-gray);
+        }
+        
+        .waitlist-form {
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--void-white);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--void-gray);
+            border-radius: 6px;
+            background: var(--void-black);
+            color: var(--void-white);
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--void-accent);
+        }
+        
+        .benefits {
+            background: var(--void-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .benefits h4 {
+            margin: 0 0 15px 0;
+            color: var(--void-accent);
+        }
+        
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .benefits li {
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--void-light-gray);
+            margin-top: 15px;
+        }
+        
+        .success-message {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .success-message h3 {
+            color: var(--void-accent);
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+            
+            .waitlist-form {
+                padding: 20px;
+            }
+        }
+        
+        /* Additional Modal Styles */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            background-color: var(--void-dark);
+            margin: 5% auto;
+            padding: 0;
+            border: 2px solid var(--void-accent);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .close {
+            color: var(--void-light-gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover {
+            color: var(--void-accent);
+        }
+        
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--void-gray);
+            border-radius: 6px;
+            background: var(--void-black);
+            color: var(--void-white);
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--void-accent);
+        }
+    </style>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeWaitlistModal()">&times;</span>
+            <div id="waitlistForm" class="waitlist-form">
+                <h2 id="modalTitle">Join the Builder Waitlist</h2>
+                <p id="modalSubtitle">Be the first to get access + exclusive 50% launch discount</p>
+                
+                <form id="waitlistFormElement" onsubmit="submitWaitlist(event)">
+                    <input type="hidden" id="planType" value="">
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company (optional)</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your SEO automation needs (optional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary full-width" id="submitBtn">
+                        🚀 Join Waitlist
+                    </button>
+                    
+                    <p class="form-note">
+                        We'll notify you when your plan launches. No spam, unsubscribe anytime.
+                    </p>
+                </form>
+            </div>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h3>🎉 You're on the list!</h3>
+                <p>Thanks for joining the waitlist. We'll notify you as soon as your plan is available.</p>
+                <p><strong>Keep an eye out for exclusive early access perks!</strong></p>
+                <button onclick="closeWaitlistModal()" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <!-- Waitlist Script -->
+    <script>
+        let supabase;
+        
+        // Initialize Supabase
+        document.addEventListener('DOMContentLoaded', function() {
+            const SUPABASE_URL = window.NEXT_PUBLIC_SUPABASE_URL;
+            const SUPABASE_ANON_KEY = window.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+            
+            if (SUPABASE_URL && SUPABASE_ANON_KEY && typeof window.supabase !== 'undefined') {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                console.log('✅ Supabase initialized for waitlist');
+            }
+        });
+        
+        // Open waitlist modal
+        function openWaitlistModal(plan) {
+            const modal = document.getElementById('waitlistModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const planType = document.getElementById('planType');
+            
+            planType.value = plan;
+            
+            // Customize modal content based on plan
+            switch(plan) {
+                case 'builder':
+                    modalTitle.textContent = 'Join the Builder Waitlist';
+                    modalSubtitle.textContent = 'Be the first to get access + exclusive 50% launch discount';
+                    break;
+                case 'studio':
+                    modalTitle.textContent = 'Join the Studio Waitlist';
+                    modalSubtitle.textContent = 'Exclusive founder pricing for early adopters';
+                    break;
+                case 'partner':
+                    modalTitle.textContent = 'Partner Program Interest';
+                    modalSubtitle.textContent = 'Custom integrations and enterprise solutions';
+                    break;
+            }
+            
+            modal.style.display = 'block';
+        }
+        
+        // Close waitlist modal
+        function closeWaitlistModal() {
+            const modal = document.getElementById('waitlistModal');
+            modal.style.display = 'none';
+            
+            // Reset form
+            document.getElementById('waitlistFormElement').reset();
+            document.getElementById('waitlistForm').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+        
+        // Submit waitlist form
+        async function submitWaitlist(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Joining...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(event.target);
+                const data = {
+                    email: formData.get('email'),
+                    plan: document.getElementById('planType').value,
+                    name: formData.get('name') || null,
+                    company: formData.get('company') || null,
+                    message: formData.get('message') || null
+                };
+                
+                if (supabase) {
+                    const { error } = await supabase
+                        .from('waitlist')
+                        .insert([data]);
+                    
+                    if (error) {
+                        if (error.code === '23505') { // Unique constraint violation
+                            throw new Error('This email is already on the waitlist!');
+                        }
+                        throw error;
+                    }
+                    
+                    console.log('✅ Waitlist entry created:', data.email);
+                } else {
+                    console.log('📝 Demo mode - would save:', data);
+                }
+                
+                // Show success message
+                document.getElementById('waitlistForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+            } catch (error) {
+                console.error('❌ Waitlist submission failed:', error);
+                alert(error.message || 'Failed to join waitlist. Please try again.');
+                
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('waitlistModal');
+            if (event.target === modal) {
+                closeWaitlistModal();
+            }
+        }
+    </script>
+    
+    <!-- Navigation Auth Script -->
+    <script src="../js/nav-auth.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+</body>
+</html>

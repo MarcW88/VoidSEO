@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lab — VoidSEO</title>
+    <meta name="description" content="Experimental SEO tools and research. Where we test new ideas, share prototypes, and document our learning process.">
+    
+    
+    
+    <!-- SEO: Canonical and hreflang -->
+    <link rel="canonical" href="https://voidseo.dev/lab/">
+    <link rel="alternate" hreflang="en-BE" href="https://voidseo.dev/lab/">
+    <link rel="alternate" hreflang="x-default" href="https://voidseo.dev/lab/">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../lab/index.html" class="active">Lab</a></li>
+                <li><a href="../docs/index.html">Docs</a></li>
+                <li><a href="../pricing/index.html" class="nav-cta">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Lab</h1>
+                <p class="hero-subtitle">
+                    Welcome to the Lab — where new ideas take shape.
+                </p>
+                <p class="hero-microcopy">
+                    Every module here started as a Deep Dive.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Current Experiments -->
+        <section class="section">
+            <div class="container">
+                <h2>Current Experiments</h2>
+                <p class="text-center mb-lg">Active research and prototypes in development</p>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <div class="experiment-header">
+                            <h3>AI Overview Detector</h3>
+                            <span class="experiment-status active">Active → Beta</span>
+                        </div>
+                        <div class="experiment-journal">
+                            <p><strong>Hypothesis:</strong> AI Overviews impact organic CTR significantly enough to warrant monitoring.</p>
+                            
+                            <div class="journal-entry">
+                                <div class="journal-date">Week 1-2:</div>
+                                <p>Built basic SERP scraper with Selenium. Detected AI Overview presence using CSS selectors.</p>
+                            </div>
+                            
+                            <div class="journal-entry">
+                                <div class="journal-date">Week 3-4:</div>
+                                <p>Added GSC integration for traffic correlation. Initial results: -12% average CTR when AI Overview present.</p>
+                            </div>
+                            
+                            <div class="journal-entry">
+                                <div class="journal-date">Week 5-6:</div>
+                                <p>Refined detection algorithm. False positive rate down to 3%. Ready for beta testing.</p>
+                            </div>
+                            
+                            <div class="journal-conclusion">
+                                <strong>Status:</strong> Moved to Beta. 50+ users testing. Stable release planned Dec 2024.
+                            </div>
+                        </div>
+                        
+                        <div class="experiment-actions mt-lg">
+                            <a href="../apps/ai-overview-detector/index.html" class="btn btn-primary">View Beta</a>
+                            <a href="#" class="btn btn-secondary">Research Notes</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="experiment-header">
+                            <h3>Entity Relationship Mapper</h3>
+                            <span class="experiment-status active">Active</span>
+                        </div>
+                        <p>
+                            Automatically extract and visualize entity relationships from web content using NLP and knowledge graphs.
+                        </p>
+                        
+                        <div class="experiment-meta">
+                            <div><strong>Started:</strong> Oct 2024</div>
+                            <div><strong>Status:</strong> Research phase</div>
+                            <div><strong>Tech:</strong> spaCy, NetworkX, Neo4j</div>
+                        </div>
+                        
+                        <div class="experiment-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 20%;"></div>
+                            </div>
+                            <span>20% complete</span>
+                        </div>
+                        
+                        <div class="experiment-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">View Progress</a>
+                            <a href="#" class="btn btn-secondary">Research Notes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Notes -->
+        <section class="section">
+            <div class="container">
+                <h2>Research Notes</h2>
+                <p class="text-center mb-lg">Deep dives, learnings, and documented experiments</p>
+                
+                <div class="research-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Nov 15, 2024</div>
+                        <div class="timeline-content">
+                            <h3>AI Overview Impact Analysis</h3>
+                            <p>
+                                Analyzed 10,000 queries to understand AI Overview trigger patterns. Found that informational queries with high search volume are 3x more likely to show AI Overviews.
+                            </p>
+                            <div class="research-tags">
+                                <span class="tag">AI Overviews</span>
+                                <span class="tag">SERP Analysis</span>
+                                <span class="tag">Data Analysis</span>
+                            </div>
+                            <a href="#" class="btn btn-secondary">Read Full Note</a>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Nov 8, 2024</div>
+                        <div class="timeline-content">
+                            <h3>Semantic Clustering Comparison</h3>
+                            <p>
+                                Compared 5 different embedding models for keyword clustering. OpenAI's text-embedding-3-small provides the best balance of accuracy and speed for SEO use cases.
+                            </p>
+                            <div class="research-tags">
+                                <span class="tag">Embeddings</span>
+                                <span class="tag">Clustering</span>
+                                <span class="tag">Benchmarking</span>
+                            </div>
+                            <a href="#" class="btn btn-secondary">Read Full Note</a>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Oct 28, 2024</div>
+                        <div class="timeline-content">
+                            <h3>PAA Question Seasonality Patterns</h3>
+                            <p>
+                                Discovered that PAA questions follow predictable seasonal patterns in 73% of analyzed verticals. E-commerce shows strongest seasonality, B2B shows weakest.
+                            </p>
+                            <div class="research-tags">
+                                <span class="tag">PAA</span>
+                                <span class="tag">Seasonality</span>
+                                <span class="tag">Content Strategy</span>
+                            </div>
+                            <a href="#" class="btn btn-secondary">Read Full Note</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prototypes -->
+        <section class="section">
+            <div class="container">
+                <h2>Prototypes & Experiments</h2>
+                <p class="text-center mb-lg">Early-stage tools and proof-of-concepts</p>
+                
+                <div class="grid grid-3">
+                    <div class="card prototype-card">
+                        <div class="prototype-header">
+                            <h3>SERP Diff Tool</h3>
+                            <span class="prototype-status prototype">Prototype</span>
+                        </div>
+                        <p>
+                            Compare SERP layouts between different dates, locations, or devices. Highlights changes in featured snippets, ads, and organic results.
+                        </p>
+                        <div class="prototype-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">Try Prototype</a>
+                            <a href="#" class="btn btn-secondary">Code</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card prototype-card">
+                        <div class="prototype-header">
+                            <span class="prototype-status experiment">Experiment</span>
+                        </div>
+                        <p>
+                            Automatically detect when content becomes outdated based on SERP changes, competitor updates, and trending topics.
+                        </p>
+                        <div class="text-center mt-lg">
+                            <a href="#" class="btn btn-primary">Submit your idea</a>
+                            <a href="#" class="btn btn-accent">→ Join the Beta</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card prototype-card">
+                        <div class="prototype-header">
+                            <h3>Intent Drift Monitor</h3>
+                            <span class="prototype-status concept">Concept</span>
+                        </div>
+                        <p>
+                            Track how search intent changes over time for your target keywords. Detect when informational queries become transactional.
+                        </p>
+                        <div class="prototype-actions mt-lg">
+                            <a href="#" class="btn btn-secondary">Concept Doc</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Failed Experiments -->
+        <section class="section">
+            <div class="container">
+                <h2>Failed Experiments</h2>
+                <p class="text-center mb-lg">What didn't work and why - learning from failures</p>
+                
+                <div class="callout warning">
+                    <h4>Why We Share Failures</h4>
+                    <p>
+                        Failed experiments are as valuable as successful ones. They save others time and reveal important constraints or assumptions that don't hold.
+                    </p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card failed-experiment">
+                        <h3>Automated Content Scoring</h3>
+                        <p>
+                            <strong>Hypothesis:</strong> We could predict content performance using only on-page factors.
+                        </p>
+                        <p>
+                            <strong>What we tried:</strong> Built ML model using 50+ content features (readability, keyword density, semantic richness, etc.)
+                        </p>
+                        <p>
+                            <strong>Why it failed:</strong> Content performance is too dependent on external factors (domain authority, backlinks, timing) that our model couldn't access.
+                        </p>
+                        <p>
+                            <strong>Learning:</strong> Content quality prediction requires holistic approach including off-page signals.
+                        </p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">Full Post-Mortem</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card failed-experiment">
+                        <h3>Real-time SERP Change Alerts</h3>
+                        <p>
+                            <strong>Hypothesis:</strong> SEOs would pay for instant notifications when their rankings change.
+                        </p>
+                        <p>
+                            <strong>What we tried:</strong> Built system to check rankings every 15 minutes and send alerts for significant changes.
+                        </p>
+                        <p>
+                            <strong>Why it failed:</strong> Too many false positives from normal SERP volatility. Users got alert fatigue within days.
+                        </p>
+                        <p>
+                            <strong>Learning:</strong> Real-time isn't always better. Daily/weekly summaries are more actionable than instant alerts.
+                        </p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">Full Post-Mortem</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contribute -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Contribute to the Lab</h2>
+                <p>Have an idea for an experiment? Want to collaborate on research?</p>
+                
+                <div class="grid grid-3 mt-lg">
+                    <div class="card">
+                        <h3>Submit an Idea</h3>
+                        <p>Share your hypothesis and we'll help you design an experiment to test it.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-primary">Submit your idea</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Join Research</h3>
+                        <p>Collaborate on active experiments. Contribute data, code, or analysis.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-secondary">Join Research</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Join the Beta</h3>
+                        <p>Get early access to experimental features and help shape their development.</p>
+                        <div class="mt-lg">
+                            <a href="#" class="btn btn-accent">→ Join the Beta</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="callout mt-lg">
+                    <h4>Lab Principles</h4>
+                    <ul>
+                        <li><strong>Document everything:</strong> Process is as important as results</li>
+                        <li><strong>Share failures:</strong> Negative results save others time</li>
+                        <li><strong>Open methodology:</strong> Reproducible experiments only</li>
+                        <li><strong>Ethical research:</strong> Respect data privacy and platform ToS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    
+    <style>
+        .experiment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .experiment-status,
+        .prototype-status {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .experiment-status.active {
+            background: var(--void-accent);
+            color: var(--void-black);
+        }
+        
+        .prototype-status.prototype {
+            background: var(--void-blue);
+            color: var(--void-white);
+        }
+        
+        .prototype-status.experiment {
+            background: #ff9500;
+            color: var(--void-white);
+        }
+        
+        .prototype-status.concept {
+            background: var(--void-light-gray);
+            color: var(--void-white);
+        }
+        
+        .experiment-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            color: var(--void-light-gray);
+        }
+        
+        .experiment-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--void-gray);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--void-accent);
+            transition: width 0.3s ease;
+        }
+        
+        .experiment-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .research-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--void-gray);
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--void-accent);
+            font-weight: 600;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+        }
+        
+        .prototype-card {
+            position: relative;
+        }
+        
+        .prototype-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .prototype-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .failed-experiment {
+            border-left: 4px solid var(--void-red);
+        }
+        
+        .failed-experiment h3 {
+            color: var(--void-red);
+        }
+        
+        .experiment-journal {
+            margin: 1rem 0;
+        }
+        
+        .journal-entry {
+            margin: 0.8rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--void-gray);
+        }
+        
+        .journal-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--void-accent);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .journal-entry p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .journal-conclusion {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: var(--void-gray);
+            border-radius: 4px;
+            border-left: 3px solid var(--void-accent);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .experiment-meta {
+                grid-template-columns: 1fr;
+            }
+            
+            .experiment-actions,
+            .prototype-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

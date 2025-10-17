@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Overview Detector — VoidSEO</title>
+    <meta name="description" content="Monitor which queries trigger AI Overviews and analyze their impact on organic traffic. Built with the VOID Loop methodology.">
+    
+    <!-- SEO: Protected app - prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Auth Protection -->
+    <div id="auth-protection" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+        <div style="background: var(--void-dark); padding: 3rem; border-radius: 12px; text-align: center; max-width: 500px; border: 2px solid var(--void-accent);">
+            <h2 style="color: var(--void-accent); margin-bottom: 1rem;">🔒 Access Restricted</h2>
+            <p style="color: var(--void-white); margin-bottom: 2rem;">This application requires a free account to be used.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="../../signup/" style="background: var(--void-accent); color: var(--void-black); padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Sign Up Free</a>
+                <a href="../../login/" style="background: transparent; color: var(--void-accent); border: 2px solid var(--void-accent); padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Login</a>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/">Framework</a></li>
+                <li><a href="../../apps/">Apps</a></li>
+                <li><a href="../../lab/">Lab</a></li>
+                <li><a href="../../docs/">Docs</a></li>
+                <li><a href="../../pricing/">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../../dashboard/free.html">Dashboard</a>
+                        <a href="../../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb" style="margin-bottom: 1rem;">
+                    <a href="../../apps/index.html" style="color: var(--void-light-gray);">Apps</a> 
+                    <span style="color: var(--void-light-gray);"> / </span>
+                    <span style="color: var(--void-accent);">AI Overview Detector</span>
+                </div>
+                <h1>AI Overview Detector</h1>
+                <p class="hero-subtitle">
+                    Monitor which queries trigger AI Overviews and analyze their impact on organic traffic.
+                </p>
+                <div class="status-info" style="margin: 1rem 0;">
+                    <span class="status-badge status-beta">Beta v0.8</span>
+                    <span style="margin-left: 1rem; color: var(--void-light-gray);">Expected stable: Dec 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Beta Notice -->
+        <section class="section">
+            <div class="container">
+                <div class="callout warning">
+                    <h4>Beta Release</h4>
+                    <p>
+                        AI Overview Detector is currently in beta. Features may change and some functionality is still being developed. 
+                        <a href="#" style="color: var(--void-accent);">Join our beta program</a> to get early access and help shape the final product.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <p>
+                            AI Overviews are changing how users interact with search results. This tool helps you understand 
+                            which of your target keywords trigger AI Overviews, how often they appear, and what impact 
+                            they have on your organic traffic.
+                        </p>
+                        
+                        <div class="callout">
+                            <h4>What it detects</h4>
+                            <ul>
+                                <li>AI Overview presence and frequency</li>
+                                <li>Content sources cited in overviews</li>
+                                <li>Traffic correlation analysis</li>
+                                <li>Trigger pattern identification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="card">
+                            <h3>Beta Stats</h3>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">50K+</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Queries monitored</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">23%</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Show AI Overviews</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">-12%</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Avg. traffic impact</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 2rem; color: var(--void-accent); font-weight: bold;">50+</div>
+                                    <div style="font-size: 0.8rem; color: var(--void-light-gray);">Beta testers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section">
+            <div class="container">
+                <h2>Features</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Automated Detection</h3>
+                        <p>Continuously monitor your keyword portfolio for AI Overview appearances with configurable frequency.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Traffic Correlation</h3>
+                        <p>Connect with Google Search Console to analyze traffic impact when AI Overviews appear.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">GSC API</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Source Attribution</h3>
+                        <p>Track which websites are cited in AI Overviews for your keywords and monitor changes over time.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Web Scraping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon -->
+        <section class="section">
+            <div class="container">
+                <h2>Coming in Stable Release</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🔄 Real-time Alerts</h3>
+                        <p>Get notified immediately when AI Overviews start or stop appearing for your keywords.</p>
+                        <div class="roadmap-meta">Expected: Dec 2024</div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>📊 Advanced Analytics</h3>
+                        <p>Deeper insights into trigger patterns, seasonal variations, and competitive analysis.</p>
+                        <div class="roadmap-meta">Expected: Jan 2025</div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 Optimization Suggestions</h3>
+                        <p>AI-powered recommendations for content optimization to increase citation chances.</p>
+                        <div class="roadmap-meta">Expected: Feb 2025</div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔗 Integration Hub</h3>
+                        <p>Connect with popular SEO tools, analytics platforms, and workflow automation systems.</p>
+                        <div class="roadmap-meta">Expected: Mar 2025</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beta Access -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Join the Beta</h2>
+                <p>Get early access to AI Overview Detector and help shape its development.</p>
+                
+                <div class="callout" style="max-width: 600px; margin: 2rem auto;">
+                    <h4>Beta Program Benefits</h4>
+                    <ul style="text-align: left;">
+                        <li>Free access during beta period</li>
+                        <li>Direct feedback channel with our team</li>
+                        <li>Early access to new features</li>
+                        <li>50% discount on stable release</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-lg">
+                    <a href="#" class="btn btn-primary">Request Beta Access</a>
+                    <a href="../../lab/index.html" class="btn btn-secondary">View Research</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    
+    <style>
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-beta {
+            background: var(--void-blue);
+            color: var(--void-white);
+        }
+        
+        .tech-stack {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-tag {
+            background: var(--void-gray);
+            color: var(--void-light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+        }
+        
+        .roadmap-meta {
+            font-size: 0.8rem;
+            color: var(--void-light-gray);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+    </style>
+    
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <!-- Auth Protection Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const authProtection = document.getElementById('auth-protection');
+            
+            // Load config
+            const SUPABASE_URL = window.NEXT_PUBLIC_SUPABASE_URL;
+            const SUPABASE_ANON_KEY = window.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+            
+            if (SUPABASE_URL && SUPABASE_ANON_KEY && typeof window.supabase !== 'undefined') {
+                const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                
+                try {
+                    const { data: { session } } = await supabase.auth.getSession();
+                    
+                    if (!session) {
+                        // Not authenticated - show protection overlay
+                        authProtection.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        // Authenticated - hide protection overlay
+                        authProtection.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        console.log('✅ User authenticated, app access granted');
+                    }
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    // On error, show protection overlay
+                    authProtection.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            } else {
+                // No Supabase config - show protection overlay
+                authProtection.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    </script>
+    <script src="../../js/nav-auth.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+</body>
+</html>
