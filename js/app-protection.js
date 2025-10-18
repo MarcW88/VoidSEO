@@ -3,7 +3,7 @@
 
 // Configuration
 const APP_URLS = {
-    'paa-explorer': 'https://app.voidseo.dev/paa-explorer',
+    'paa-explorer': 'https://paa-explorer.netlify.app/paa-explorer/',
     'ai-detector': 'https://app.voidseo.dev/ai-detector',
     // Add more apps here as they're created
 };
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Setup protection for app links
 function setupAppProtection() {
     // Find all app launch buttons
-    const appButtons = document.querySelectorAll('a[href*="app.voidseo.dev"], a[href*="Launch"], a[href*="Try demo"]');
+    const appButtons = document.querySelectorAll('a[href*="paa-explorer.netlify.app"], a[href*="app.voidseo.dev"], a[href*="Launch"], a[href*="Try demo"]');
     
     appButtons.forEach(button => {
         // Skip if already protected
