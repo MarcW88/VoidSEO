@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAA Explorer - Real App</title>
+    <meta name="description" content="Scrape and cluster People Also Ask questions with AI-powered analysis">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background: #111;
+            padding: 1rem 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff99;
+            text-decoration: none;
+        }
+        
+        .main {
+            padding: 2rem 0;
+        }
+        
+        .app-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .app-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00ff99, #0099ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .app-subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        
+        .status-banner {
+            background: #1a4d3a;
+            border: 1px solid #00ff99;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .input-section {
+            background: #111;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ccc;
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #00ff99;
+            box-shadow: 0 0 0 2px rgba(0, 255, 153, 0.2);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #00ff99;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #00cc7a;
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            background: #444;
+            color: #888;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-full {
+            width: 100%;
+        }
+        
+        .results-section {
+            background: #111;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            display: none;
+        }
+        
+        .results-section.show {
+            display: block;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff99, #0099ff);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: #222;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff99;
+        }
+        
+        .stat-label {
+            color: #888;
+            margin-top: 0.5rem;
+        }
+        
+        .clusters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .cluster-card {
+            background: #222;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #00ff99;
+        }
+        
+        .cluster-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #00ff99;
+        }
+        
+        .question-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #333;
+            color: #ccc;
+        }
+        
+        .question-item:last-child {
+            border-bottom: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+        }
+        
+        .error {
+            background: #4a1a1a;
+            border: 1px solid #ff4444;
+            color: #ff8888;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: #1a4d3a;
+            border: 1px solid #00ff99;
+            color: #88ffcc;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .input-section, .results-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="https://voidseo.dev" class="logo">VoidSEO</a>
+            <div>
+                <a href="https://voidseo.dev/apps/paa-explorer/" style="color: #888; text-decoration: none;">← Back to Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="app-header">
+                <h1 class="app-title">PAA Explorer</h1>
+                <p class="app-subtitle">Real-time People Also Ask analysis with AI clustering</p>
+                
+                <div class="status-banner">
+                    <strong>🚀 Live App</strong> • Real Google scraping • OpenAI clustering • Instant results
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <h2 style="margin-bottom: 1.5rem; color: #00ff99;">🔍 Analyze Keywords</h2>
+                
+                <form id="analysisForm">
+                    <div class="form-group">
+                        <label class="form-label" for="keywords">Keywords (comma-separated)</label>
+                        <input 
+                            type="text" 
+                            id="keywords" 
+                            class="form-input"
+                            placeholder="seo tools, keyword research, content optimization"
+                            value="seo tools, keyword research"
+                            required
+                        >
+                        <small style="color: #888; margin-top: 0.5rem; display: block;">
+                            Enter 2-5 keywords for best results
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="algorithm">Clustering Algorithm</label>
+                        <select id="algorithm" class="form-select">
+                            <option value="kmeans">K-means (Recommended)</option>
+                            <option value="dbscan">DBSCAN</option>
+                            <option value="hierarchical">Hierarchical</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" id="analyzeBtn" class="btn btn-full">
+                        🚀 Start Analysis
+                    </button>
+                </form>
+                
+                <div id="quotaInfo" style="margin-top: 1rem; padding: 1rem; background: #222; border-radius: 8px; color: #888; font-size: 0.9rem;">
+                    <strong>Free Tier:</strong> 3 analyses/day • Powered by VoidSEO credits
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section">
+                <h2 style="margin-bottom: 1.5rem; color: #00ff99;">📊 Analysis Results</h2>
+                
+                <div id="progressContainer" style="display: none;">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText" class="loading">Initializing analysis...</p>
+                </div>
+                
+                <div id="statsContainer" style="display: none;">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div id="questionsCount" class="stat-number">0</div>
+                            <div class="stat-label">Questions Found</div>
+                        </div>
+                        <div class="stat-card">
+                            <div id="clustersCount" class="stat-number">0</div>
+                            <div class="stat-label">Clusters Created</div>
+                        </div>
+                        <div class="stat-card">
+                            <div id="qualityScore" class="stat-number">0%</div>
+                            <div class="stat-label">Quality Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div id="processingTime" class="stat-number">0s</div>
+                            <div class="stat-label">Processing Time</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="clustersContainer" style="display: none;">
+                    <h3 style="margin-bottom: 1rem; color: #ccc;">Question Clusters</h3>
+                    <div id="clustersGrid" class="clusters-grid">
+                        <!-- Clusters will be populated here -->
+                    </div>
+                </div>
+                
+                <div id="exportContainer" style="display: none; margin-top: 2rem; text-align: center;">
+                    <button id="exportBtn" class="btn">📊 Export Results (CSV)</button>
+                    <p style="color: #888; margin-top: 0.5rem; font-size: 0.9rem;">
+                        Full exports available in Builder plan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // PAA Explorer Real App Logic
+        const API_BASE = window.location.hostname === 'localhost' 
+            ? 'http://localhost:8000/api' 
+            : '/.netlify/functions';
+            
+        let currentJobId = null;
+        
+        document.getElementById('analysisForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await startAnalysis();
+        });
+        
+        async function startAnalysis() {
+            const keywords = document.getElementById('keywords').value.trim();
+            const algorithm = document.getElementById('algorithm').value;
+            
+            if (!keywords) {
+                showError('Please enter some keywords to analyze');
+                return;
+            }
+            
+            const keywordsList = keywords.split(',').map(k => k.trim()).filter(k => k);
+            
+            if (keywordsList.length === 0) {
+                showError('Please enter valid keywords');
+                return;
+            }
+            
+            // Show loading state
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_BASE}/jobs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer demo-token'
+                    },
+                    body: JSON.stringify({
+                        keywords: keywordsList,
+                        locale: 'en-US',
+                        algorithm: algorithm
+                    })
+                });
+                
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail?.message || error.message || 'Analysis failed');
+                }
+                
+                const result = await response.json();
+                currentJobId = result.job_id;
+                
+                if (result.status === 'completed' && result.results) {
+                    // Netlify returns results immediately
+                    showResults(result.results);
+                } else {
+                    // Poll for results (for other deployments)
+                    pollForResults(result.job_id);
+                }
+                
+            } catch (error) {
+                console.error('Analysis error:', error);
+                showError(`Analysis failed: ${error.message}`);
+            }
+        }
+        
+        function showLoading() {
+            document.getElementById('resultsSection').classList.add('show');
+            document.getElementById('progressContainer').style.display = 'block';
+            document.getElementById('statsContainer').style.display = 'none';
+            document.getElementById('clustersContainer').style.display = 'none';
+            document.getElementById('exportContainer').style.display = 'none';
+            
+            // Animate progress
+            let progress = 0;
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            const messages = [
+                'Initializing analysis...',
+                'Scraping Google PAA...',
+                'Generating embeddings...',
+                'Clustering questions...',
+                'Finalizing results...'
+            ];
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 90) progress = 90;
+                
+                progressFill.style.width = progress + '%';
+                progressText.textContent = messages[Math.floor(progress / 20)] || 'Processing...';
+                
+                if (progress >= 90) {
+                    clearInterval(interval);
+                }
+            }, 800);
+        }
+        
+        function showResults(results) {
+            // Hide progress
+            document.getElementById('progressContainer').style.display = 'none';
+            
+            // Show stats
+            document.getElementById('statsContainer').style.display = 'block';
+            document.getElementById('questionsCount').textContent = results.stats.total_questions;
+            document.getElementById('clustersCount').textContent = results.stats.total_clusters;
+            document.getElementById('qualityScore').textContent = Math.round(results.stats.clustering_quality * 100) + '%';
+            document.getElementById('processingTime').textContent = results.stats.processing_time;
+            
+            // Show clusters
+            document.getElementById('clustersContainer').style.display = 'block';
+            const clustersGrid = document.getElementById('clustersGrid');
+            clustersGrid.innerHTML = '';
+            
+            // Group questions by cluster
+            const clusterGroups = {};
+            results.questions.forEach(q => {
+                if (!clusterGroups[q.cluster]) {
+                    clusterGroups[q.cluster] = [];
+                }
+                clusterGroups[q.cluster].push(q);
+            });
+            
+            // Create cluster cards
+            Object.entries(clusterGroups).forEach(([clusterName, questions]) => {
+                const clusterCard = document.createElement('div');
+                clusterCard.className = 'cluster-card';
+                
+                clusterCard.innerHTML = `
+                    <div class="cluster-title">${clusterName} (${questions.length} questions)</div>
+                    ${questions.map(q => `
+                        <div class="question-item">${q.text}</div>
+                    `).join('')}
+                `;
+                
+                clustersGrid.appendChild(clusterCard);
+            });
+            
+            // Show export
+            document.getElementById('exportContainer').style.display = 'block';
+            
+            showSuccess('Analysis completed successfully!');
+        }
+        
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            
+            const container = document.querySelector('.container');
+            container.insertBefore(errorDiv, container.firstChild);
+            
+            setTimeout(() => errorDiv.remove(), 5000);
+        }
+        
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success';
+            successDiv.textContent = message;
+            
+            const container = document.querySelector('.container');
+            container.insertBefore(successDiv, container.firstChild);
+            
+            setTimeout(() => successDiv.remove(), 5000);
+        }
+        
+        // Export functionality
+        document.getElementById('exportBtn').addEventListener('click', () => {
+            alert('📊 Export feature available in Builder plan.\n\nUpgrade to unlock CSV, JSON, and Google Sheets exports.');
+        });
+    </script>
+</body>
+</html>
