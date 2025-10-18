@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Overview Detector Preview — VoidSEO</title>
+    <meta name="description" content="See how AI Overview Detector works with example data and learn the VOID Loop methodology behind it.">
+    
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <style>
+        .access-level-banner {
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .access-visitor {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .access-free {
+            background: linear-gradient(135deg, #00ff99, #0099ff);
+            color: #000;
+        }
+        
+        .access-builder {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #000;
+        }
+        
+        .app-preview-section {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .example-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .example-data-table th,
+        .example-data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        .example-data-table th {
+            background: #333;
+            color: #00ff99;
+            font-weight: bold;
+        }
+        
+        .example-data-table td {
+            color: #ccc;
+        }
+        
+        .ai-status {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .ai-detected {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .ai-none {
+            background: #00ff99;
+            color: #000;
+        }
+        
+        .cta-section {
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .feature-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            color: #00ff99;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #ccc;
+            border-bottom: 1px solid #333;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-available {
+            color: #00ff99;
+        }
+        
+        .feature-blocked {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Access Level Banner -->
+    <div id="accessBanner" class="access-level-banner access-visitor">
+        🔒 <strong>Visitor Preview:</strong> Sign up for free to see example data and learn the methodology
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/">Framework</a></li>
+                <li><a href="../../apps/">Apps</a></li>
+                <li><a href="../../lab/">Lab</a></li>
+                <li><a href="../../docs/">Docs</a></li>
+                <li><a href="../../pricing/">Pricing</a></li>
+                
+                <!-- Dynamic Auth Links -->
+                <li id="auth-signup" style="display: none;"><a href="../../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../../login/" class="nav-auth">Login</a></li>
+                <li id="user-menu" style="display: none;">
+                    <a href="../../dashboard/" class="nav-auth">Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- App Header -->
+            <div class="app-header" style="text-align: center; margin: 2rem 0;">
+                <h1 style="color: #00ff99; font-family: 'Courier New', monospace;">AI Overview Detector</h1>
+                <p style="color: #ccc; font-size: 1.2rem;">Monitor which queries trigger AI Overviews</p>
+                <p style="color: #888;">Built with the VOID Loop methodology • 100% transparent</p>
+            </div>
+
+            <!-- What You Can Access -->
+            <section class="app-preview-section">
+                <h2 style="color: #00ff99; margin-bottom: 1rem;">🎯 What You Can Access</h2>
+                
+                <div class="feature-comparison">
+                    <div class="feature-card">
+                        <h3>👤 Visitor (You)</h3>
+                        <ul class="feature-list">
+                            <li class="feature-available">✅ See how it works</li>
+                            <li class="feature-available">✅ Read VOID Loop methodology</li>
+                            <li class="feature-available">✅ View app architecture</li>
+                            <li class="feature-blocked">❌ Example data</li>
+                            <li class="feature-blocked">❌ Templates download</li>
+                            <li class="feature-blocked">❌ Functional app</li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <a href="../../signup/" class="btn btn-primary">🚀 Sign Up Free</a>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🆓 Free Tier</h3>
+                        <ul class="feature-list">
+                            <li class="feature-available">✅ Everything from Visitor</li>
+                            <li class="feature-available">✅ Example data tables</li>
+                            <li class="feature-available">✅ Complete VOID Loop view</li>
+                            <li class="feature-available">✅ Basic templates download</li>
+                            <li class="feature-available">✅ Community access</li>
+                            <li class="feature-blocked">❌ Functional app</li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <span style="color: #888;">Free forever • No credit card</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>💎 Builder Tier</h3>
+                        <ul class="feature-list">
+                            <li class="feature-available">✅ Everything from Free</li>
+                            <li class="feature-available">✅ Functional app access</li>
+                            <li class="feature-available">✅ Real SERP monitoring</li>
+                            <li class="feature-available">✅ Unlimited queries</li>
+                            <li class="feature-available">✅ Source code access</li>
+                            <li class="feature-available">✅ Advanced templates</li>
+                        </ul>
+                        <div style="margin-top: 1rem;">
+                            <a href="../../pricing/" class="btn btn-secondary">View Pricing</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works (Always Visible) -->
+            <section class="app-preview-section">
+                <h2 style="color: #00ff99; margin-bottom: 1rem;">🧠 How AI Overview Detector Works</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="background: #222; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #00ff99;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">1. Input</h3>
+                        <p style="color: #ccc;">Enter search queries to monitor</p>
+                        <code style="background: #333; padding: 0.5rem; border-radius: 4px; color: #00ff99; display: block; margin-top: 0.5rem;">
+                            "best seo tools", "how to rank"
+                        </code>
+                    </div>
+                    
+                    <div style="background: #222; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #0099ff;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">2. Monitoring</h3>
+                        <p style="color: #ccc;">Automated SERP checks for AI Overviews</p>
+                        <code style="background: #333; padding: 0.5rem; border-radius: 4px; color: #0099ff; display: block; margin-top: 0.5rem;">
+                            Daily checks across locations
+                        </code>
+                    </div>
+                    
+                    <div style="background: #222; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ffa500;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">3. Detection</h3>
+                        <p style="color: #ccc;">AI-powered detection of AI Overview presence</p>
+                        <code style="background: #333; padding: 0.5rem; border-radius: 4px; color: #ffa500; display: block; margin-top: 0.5rem;">
+                            95%+ accuracy rate
+                        </code>
+                    </div>
+                    
+                    <div style="background: #222; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6b6b;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">4. Insights</h3>
+                        <p style="color: #ccc;">Trend analysis + impact metrics</p>
+                        <code style="background: #333; padding: 0.5rem; border-radius: 4px; color: #ff6b6b; display: block; margin-top: 0.5rem;">
+                            CSV export + alerts
+                        </code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example Data (Free Tier Only) -->
+            <section id="exampleDataSection" class="app-preview-section" style="display: none;">
+                <h2 style="color: #00ff99; margin-bottom: 1rem;">📊 Example Data</h2>
+                <p style="color: #ccc; margin-bottom: 1rem;">Here's what AI Overview Detector found for SEO-related queries:</p>
+                
+                <table class="example-data-table">
+                    <thead>
+                        <tr>
+                            <th>Query</th>
+                            <th>AI Overview</th>
+                            <th>Location</th>
+                            <th>Last Checked</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>best seo tools</td>
+                            <td><span class="ai-status ai-detected">Detected</span></td>
+                            <td>US</td>
+                            <td>2 hours ago</td>
+                        </tr>
+                        <tr>
+                            <td>how to rank on google</td>
+                            <td><span class="ai-status ai-detected">Detected</span></td>
+                            <td>US</td>
+                            <td>2 hours ago</td>
+                        </tr>
+                        <tr>
+                            <td>keyword research tools</td>
+                            <td><span class="ai-status ai-none">None</span></td>
+                            <td>US</td>
+                            <td>2 hours ago</td>
+                        </tr>
+                        <tr>
+                            <td>seo audit checklist</td>
+                            <td><span class="ai-status ai-detected">Detected</span></td>
+                            <td>UK</td>
+                            <td>1 hour ago</td>
+                        </tr>
+                        <tr>
+                            <td>link building strategies</td>
+                            <td><span class="ai-status ai-none">None</span></td>
+                            <td>US</td>
+                            <td>3 hours ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="background: #333; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                    <h4 style="color: #00ff99; margin-bottom: 0.5rem;">Key Insights:</h4>
+                    <ul style="color: #ccc; margin: 0; padding-left: 1rem;">
+                        <li>60% of monitored queries show AI Overviews</li>
+                        <li>"How to" queries have 85% AI Overview rate</li>
+                        <li>Tool comparison queries: 40% AI Overview rate</li>
+                        <li>Average detection confidence: 96.2%</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div id="visitorCTA" style="display: block;">
+                    <h2 style="color: #00ff99; margin-bottom: 1rem;">Ready to Monitor AI Overviews?</h2>
+                    <p style="color: #ccc; margin-bottom: 2rem;">Sign up for free to see example data and learn the complete methodology</p>
+                    <a href="../../signup/" class="btn btn-primary" style="margin-right: 1rem;">🚀 Sign Up Free</a>
+                    <a href="../../framework/" class="btn btn-secondary">Learn VOID Loop</a>
+                </div>
+                
+                <div id="freeCTA" style="display: none;">
+                    <h2 style="color: #00ff99; margin-bottom: 1rem;">Ready to Build Your Own?</h2>
+                    <p style="color: #ccc; margin-bottom: 2rem;">Upgrade to Builder for functional app access and source code</p>
+                    <a href="../../pricing/" class="btn btn-primary" style="margin-right: 1rem;">🚀 Upgrade to Builder</a>
+                    <a href="../../pricing/" class="btn btn-secondary">View Pricing</a>
+                </div>
+                
+                <div id="builderCTA" style="display: none;">
+                    <h2 style="color: #00ff99; margin-bottom: 1rem;">Launch AI Overview Detector</h2>
+                    <p style="color: #ccc; margin-bottom: 2rem;">Access your unlimited functional app with real SERP monitoring</p>
+                    <a href="#" class="btn btn-primary">🚀 Launch App</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Dynamic content based on user tier
+        document.addEventListener('DOMContentLoaded', async function() {
+            let userTier = 'visitor'; // Default
+            
+            // Initialize Supabase and check auth
+            try {
+                const supabase = window.supabase.createClient(
+                    window.NEXT_PUBLIC_SUPABASE_URL,
+                    window.NEXT_PUBLIC_SUPABASE_ANON_KEY
+                );
+                
+                const { data: { session } } = await supabase.auth.getSession();
+                
+                if (session) {
+                    // Check user tier from metadata or database
+                    const userMetadata = session.user.user_metadata;
+                    userTier = userMetadata?.tier || 'free';
+                }
+            } catch (error) {
+                console.error('Auth check failed:', error);
+            }
+            
+            // Update UI based on tier
+            updateUIForTier(userTier);
+        });
+        
+        function updateUIForTier(tier) {
+            const banner = document.getElementById('accessBanner');
+            const exampleData = document.getElementById('exampleDataSection');
+            const visitorCTA = document.getElementById('visitorCTA');
+            const freeCTA = document.getElementById('freeCTA');
+            const builderCTA = document.getElementById('builderCTA');
+            
+            // Hide all CTAs first
+            visitorCTA.style.display = 'none';
+            freeCTA.style.display = 'none';
+            builderCTA.style.display = 'none';
+            
+            switch(tier) {
+                case 'visitor':
+                    banner.className = 'access-level-banner access-visitor';
+                    banner.innerHTML = '🔒 <strong>Visitor Preview:</strong> Sign up for free to see example data and learn the methodology';
+                    exampleData.style.display = 'none';
+                    visitorCTA.style.display = 'block';
+                    break;
+                    
+                case 'free':
+                    banner.className = 'access-level-banner access-free';
+                    banner.innerHTML = '🆓 <strong>Free Tier:</strong> View example data and complete VOID Loop methodology';
+                    exampleData.style.display = 'block';
+                    freeCTA.style.display = 'block';
+                    break;
+                    
+                case 'builder':
+                    banner.className = 'access-level-banner access-builder';
+                    banner.innerHTML = '💎 <strong>Builder Access:</strong> Launch functional app with unlimited real SERP monitoring';
+                    exampleData.style.display = 'block';
+                    builderCTA.style.display = 'block';
+                    break;
+            }
+        }
+    </script>
+    
+    <!-- Auth System -->
+    <script src="../../js/auth.js"></script>
+</body>
+</html>
