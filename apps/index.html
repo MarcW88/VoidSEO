@@ -22,10 +22,27 @@
             <a href="../index.html" class="logo">VoidSEO</a>
             <ul class="nav-links">
                 <li><a href="../framework/index.html">Framework</a></li>
-                <li><a href="../apps/index.html" class="active">Apps</a></li>
-                <li><a href="../lab/index.html">Lab</a></li>
+                <li><a href="../apps/index.html" class="active">Apps <span class="nav-badge">2 Free</span></a></li>
+                <li><a href="../lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
                 <li><a href="../docs/index.html">Docs</a></li>
-                <li><a href="../pricing/index.html" class="nav-cta">Pricing</a></li>
+                <li><a href="../pricing/index.html">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../dashboard/free.html">Dashboard</a>
+                        <a href="../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -96,8 +113,7 @@
                         </div>
                         
                         <div class="app-actions mt-lg">
-                            <a href="paa-explorer/preview.html" class="btn btn-secondary">View Preview</a>
-                            <a href="https://paa-explorer.netlify.app/paa-explorer/" class="btn btn-primary" target="_blank">Launch App</a>
+                            <a href="paa-explorer/preview.html" class="btn btn-primary">View Preview</a>
                         </div>
                     </div>
 
@@ -131,8 +147,7 @@
                         </div>
                         
                         <div class="app-actions mt-lg">
-                            <a href="ai-overview-detector/index.html" class="btn btn-primary">Explore</a>
-                            <a href="#" class="btn btn-secondary">Join Beta</a>
+                            <a href="ai-overview-detector/preview.html" class="btn btn-primary">View Preview</a>
                         </div>
                     </div>
 
@@ -490,7 +505,18 @@
         }
     </style>
     
-    <!-- App Protection -->
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-auth.js"></script>
     <script src="../js/app-protection.js"></script>
 </body>
 </html>
