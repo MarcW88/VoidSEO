@@ -22,14 +22,31 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
-            <a href="../" class="logo">VoidSEO</a>
+                <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
             <ul class="nav-links">
                 <li><a href="../framework/index.html">Framework</a></li>
-                <li><a href="../apps/index.html">Apps</a></li>
-                <li><a href="../lab/index.html">Lab</a></li>
-                <li><a href="../community/index.html">Community</a></li>
-                <li><a href="../signup/" class="nav-cta">Sign Up</a></li>
+                <li><a href="../apps/index.html">Apps <span class="nav-badge">2 Free</span></a></li>
+                <li><a href="../lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
+                <li><a href="../docs/index.html">Docs</a></li>
+                <li><a href="../pricing/index.html">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../dashboard/free.html">Dashboard</a>
+                        <a href="../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
         </nav>
@@ -194,7 +211,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container text-center text-muted">
-            <p>&copy; 2024 VoidSEO. Built with the VOID Loop framework.</p>
+            <p>&copy; 2025 VoidSEO. Built with the VOID Loop framework.</p>
         </div>
     </footer>
 
@@ -288,6 +305,18 @@
                 setTimeout(() => document.body.removeChild(toast), 300);
             }, 4000);
         }
+    </script>    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <!-- Configuration Supabase -->
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
     </script>
+    
+    <!-- Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/nav-auth.js"></script>
+
 </body>
 </html>
