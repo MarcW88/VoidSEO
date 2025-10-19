@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/auth-fallback.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID Loop Framework — VoidSEO Documentation</title>
+    <meta name="description" content="Complete VOID Loop methodology documentation. Learn how to build transparent, documented SEO workflows.">
+    
+    <link rel="canonical" href="https://voidseo.dev/docs/framework/">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/index.html">Framework</a></li>
+                <li><a href="../../apps/index.html">Apps <span class="nav-badge">2 Free</span></a></li>
+                <li><a href="../../lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
+                <li><a href="../../docs/index.html" class="active">Docs</a></li>
+                <li><a href="../../pricing/index.html">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../../dashboard/free.html">Dashboard</a>
+                        <a href="../../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="../../docs/">Documentation</a> / <strong>VOID Loop Framework</strong>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero docs-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>📚 The VOID Loop Framework</h1>
+                <p class="hero-subtitle">
+                    Understand how we build everything — from intuition to documented, measurable workflows
+                </p>
+                <div class="framework-overview">
+                    <div class="void-cycle-mini">
+                        <span class="cycle-letter-mini">V</span>
+                        <span class="cycle-letter-mini">O</span>
+                        <span class="cycle-letter-mini">I</span>
+                        <span class="cycle-letter-mini">D</span>
+                    </div>
+                    <p><strong>Vision → Objective → Implementation → Deep Dive</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Framework Overview</h2>
+                
+                <div class="callout callout-info">
+                    <h4>What is the VOID Loop?</h4>
+                    <p>The VOID Loop is our methodology for turning SEO intuitions into <strong>transparent, documented, and measurable workflows</strong>. Every VoidSEO app — from PAA Explorer to AI Overview Detector — was built using this exact framework.</p>
+                </div>
+
+                <div class="framework-principles">
+                    <h3>Core Principles</h3>
+                    <div class="grid grid-2">
+                        <div class="principle-card">
+                            <div class="principle-icon">⚙️</div>
+                            <h4>Clarity over hype</h4>
+                            <p>We document before we code. Every step is explicit and reproducible.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">🚀</div>
+                            <h4>Small steps, shipped</h4>
+                            <p>Prefer modular components you can replace and iterate on.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">🔍</div>
+                            <h4>Observable by design</h4>
+                            <p>Logs, metrics, and explicit data contracts at every step.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <div class="principle-icon">📝</div>
+                            <h4>Share the path</h4>
+                            <p>Show process, not only results. Enable others to build on your work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 4 Steps -->
+        <section class="section">
+            <div class="container">
+                <h2>The 4 Steps</h2>
+                
+                <!-- Vision -->
+                <div class="framework-step" id="vision">
+                    <div class="step-header">
+                        <div class="step-letter-large">V</div>
+                        <div class="step-info">
+                            <h3>Vision</h3>
+                            <p class="step-tagline">Identify patterns worth automating</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>What is Vision?</h4>
+                                <p>Vision is about <strong>pattern recognition</strong>. You observe something you do repeatedly in SEO and ask: "Could this be automated? Would automation add value?"</p>
+                                
+                                <h4>Key Questions</h4>
+                                <ul>
+                                    <li>What SEO task do I repeat weekly/monthly?</li>
+                                    <li>Where do I spend time on manual data collection?</li>
+                                    <li>What insights am I missing due to scale limitations?</li>
+                                    <li>How could I make this process transparent to others?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>💡 Example: PAA Explorer Vision</h4>
+                                <div class="example-content">
+                                    <p><strong>Pattern observed:</strong> "I manually check People Also Ask questions for content ideas, but it's inconsistent and time-consuming."</p>
+                                    
+                                    <p><strong>Automation opportunity:</strong> "I could scrape PAA questions systematically and cluster them by intent to find content gaps."</p>
+                                    
+                                    <p><strong>Value hypothesis:</strong> "This would save 2+ hours per content audit and reveal patterns I miss manually."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="template-download">
+                            <h4>📋 Vision Template</h4>
+                            <p>Use our template to document your vision clearly:</p>
+                            <a href="../../templates/vision-template.md" class="btn btn-secondary">Download Template</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objective -->
+                <div class="framework-step" id="objective">
+                    <div class="step-header">
+                        <div class="step-letter-large">O</div>
+                        <div class="step-info">
+                            <h3>Objective</h3>
+                            <p class="step-tagline">Define inputs, outputs, and metrics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>What is Objective?</h4>
+                                <p>Objective transforms your vision into <strong>concrete specifications</strong>. You define exactly what goes in, what comes out, and how you'll measure success.</p>
+                                
+                                <h4>The Objective Formula</h4>
+                                <div class="formula-box">
+                                    <p><strong>Input:</strong> What data/parameters do you need?</p>
+                                    <p><strong>Process:</strong> What transformations happen?</p>
+                                    <p><strong>Output:</strong> What format/structure do you deliver?</p>
+                                    <p><strong>Success:</strong> How do you measure if it worked?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>💡 Example: PAA Explorer Objective</h4>
+                                <div class="example-content">
+                                    <p><strong>Input:</strong> 5-10 seed keywords + locale settings</p>
+                                    
+                                    <p><strong>Process:</strong> Scrape PAA → Embed questions → Cluster by similarity → Label clusters</p>
+                                    
+                                    <p><strong>Output:</strong> CSV with clustered questions + intent labels + opportunity scores</p>
+                                    
+                                    <p><strong>Success:</strong> Find 20+ unique content ideas in <5 minutes with 85%+ relevance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="template-download">
+                            <h4>📋 Objective Template (PRD)</h4>
+                            <p>Use our Product Requirements Document template:</p>
+                            <a href="../../templates/objective-template.md" class="btn btn-secondary">Download Template</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation -->
+                <div class="framework-step" id="implementation">
+                    <div class="step-header">
+                        <div class="step-letter-large">I</div>
+                        <div class="step-info">
+                            <h3>Implementation</h3>
+                            <p class="step-tagline">Build & test your workflow</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>What is Implementation?</h4>
+                                <p>Implementation is where you <strong>build and validate</strong> your workflow. Start simple, test with real data, and iterate based on results.</p>
+                                
+                                <h4>Implementation Best Practices</h4>
+                                <ul>
+                                    <li><strong>Start manual:</strong> Prove the concept by hand first</li>
+                                    <li><strong>Script incrementally:</strong> Automate one step at a time</li>
+                                    <li><strong>Test with real data:</strong> Use your actual keywords/domains</li>
+                                    <li><strong>Log everything:</strong> Track inputs, outputs, and errors</li>
+                                    <li><strong>Make it modular:</strong> Each step should be replaceable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>💡 Example: PAA Explorer Implementation</h4>
+                                <div class="example-content">
+                                    <p><strong>Phase 1:</strong> Manual PAA collection for 5 keywords</p>
+                                    
+                                    <p><strong>Phase 2:</strong> Automated scraping with Playwright</p>
+                                    
+                                    <p><strong>Phase 3:</strong> OpenAI embeddings for clustering</p>
+                                    
+                                    <p><strong>Phase 4:</strong> Export pipeline + error handling</p>
+                                    
+                                    <p><strong>Phase 5:</strong> Web interface + rate limiting</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="code-structure">
+                            <h4>🏗️ Recommended Code Structure</h4>
+                            <pre><code>your-workflow/
+├── src/
+│   ├── scraper.py      # Data collection
+│   ├── processor.py    # Data transformation  
+│   ├── exporter.py     # Output generation
+│   └── main.py         # Orchestration
+├── tests/
+│   └── test_workflow.py
+├── config/
+│   └── settings.yaml
+├── requirements.txt
+└── README.md</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Dive -->
+                <div class="framework-step" id="deep-dive">
+                    <div class="step-header">
+                        <div class="step-letter-large">D</div>
+                        <div class="step-info">
+                            <h3>Deep Dive</h3>
+                            <p class="step-tagline">Measure, learn, iterate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-content">
+                        <div class="grid grid-2">
+                            <div>
+                                <h4>What is Deep Dive?</h4>
+                                <p>Deep Dive is about <strong>measurement and learning</strong>. You analyze what worked, what didn't, and what you learned for the next iteration.</p>
+                                
+                                <h4>Deep Dive Questions</h4>
+                                <ul>
+                                    <li>Did we achieve our success metrics?</li>
+                                    <li>What edge cases did we discover?</li>
+                                    <li>Where did the workflow break or slow down?</li>
+                                    <li>What would we do differently next time?</li>
+                                    <li>How can others reproduce or improve this?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4>💡 Example: PAA Explorer Deep Dive</h4>
+                                <div class="example-content">
+                                    <p><strong>Results:</strong> 87% accuracy in clustering, 15min vs 4hrs manual</p>
+                                    
+                                    <p><strong>Edge cases:</strong> Non-English queries need different embeddings</p>
+                                    
+                                    <p><strong>Bottlenecks:</strong> Google rate limiting, OpenAI API costs</p>
+                                    
+                                    <p><strong>Next iteration:</strong> Add caching, multi-language support</p>
+                                    
+                                    <p><strong>Documentation:</strong> Created this guide + video walkthrough</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="deep-dive-template">
+                            <h4>📊 Deep Dive Report Template</h4>
+                            <p>Document your learnings systematically:</p>
+                            <a href="../../templates/deep-dive-template.md" class="btn btn-secondary">Download Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section class="section">
+            <div class="container">
+                <h2>Case Studies</h2>
+                
+                <div class="case-studies-grid">
+                    <div class="case-study-card">
+                        <h4>🔍 PAA Explorer</h4>
+                        <p><strong>Vision:</strong> Automate content gap analysis</p>
+                        <p><strong>Result:</strong> 15min vs 4hrs manual, 87% accuracy</p>
+                        <a href="../../apps/paa-explorer/" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <h4>🤖 AI Overview Detector</h4>
+                        <p><strong>Vision:</strong> Track AI Overview impact on organic traffic</p>
+                        <p><strong>Result:</strong> Real-time monitoring, 95% detection accuracy</p>
+                        <a href="../../apps/ai-overview-detector/" class="btn btn-secondary">View Case Study</a>
+                    </div>
+                    
+                    <div class="case-study-card">
+                        <h4>🔗 Internal Link Analyzer</h4>
+                        <p><strong>Vision:</strong> Optimize internal linking at scale</p>
+                        <p><strong>Status:</strong> In development</p>
+                        <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates & Resources -->
+        <section class="section">
+            <div class="container">
+                <h2>Templates & Resources</h2>
+                
+                <div class="grid grid-2">
+                    <div class="resource-card">
+                        <h4>📋 VOID Loop Templates</h4>
+                        <ul>
+                            <li><a href="../../templates/vision-template.md">Vision Template</a></li>
+                            <li><a href="../../templates/objective-template.md">Objective Template (PRD)</a></li>
+                            <li><a href="../../templates/implementation-checklist.md">Implementation Checklist</a></li>
+                            <li><a href="../../templates/deep-dive-template.md">Deep Dive Report</a></li>
+                        </ul>
+                        <div class="mt-lg">
+                            <a href="../../templates/" class="btn btn-primary">Download All Templates</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h4>🛠️ Development Resources</h4>
+                        <ul>
+                            <li><a href="../../docs/api/">API Reference</a></li>
+                            <li><a href="https://github.com/voidseo/examples">Code Examples</a></li>
+                            <li><a href="../../community/">Community Discord</a></li>
+                            <li><a href="../../docs/getting-started/">Getting Started Guide</a></li>
+                        </ul>
+                        <div class="mt-lg">
+                            <a href="../../community/" class="btn btn-secondary">Join Community</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2025 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/nav-auth.js"></script>
+</body>
+</html>

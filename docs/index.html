@@ -52,100 +52,114 @@
     <section class="hero" style="min-height: 60vh;">
         <div class="container">
             <div class="hero-content">
-                <h1>Documentation</h1>
+                <h1>📚 VoidSEO Documentation</h1>
                 <p class="hero-subtitle">
-                    Complete guides, API references, and tutorials for VoidSEO tools and the VOID Loop framework.
+                    Everything you need to understand, build, and extend the VOID Loop framework.
                 </p>
+                <div class="docs-nav-preview">
+                    <p><strong>Explore by level:</strong></p>
+                    <div class="nav-links-preview">
+                        <a href="#getting-started" class="nav-preview-link">➡️ Getting Started</a> — Install, run your first workflow<br>
+                        <a href="#framework" class="nav-preview-link">➡️ Framework</a> — Understand the VOID Loop methodology<br>
+                        <a href="#apps" class="nav-preview-link">➡️ Apps</a> — Learn how each tool works<br>
+                        <a href="#api-reference" class="nav-preview-link">➡️ API</a> — Integrate and automate<br>
+                        <a href="#community" class="nav-preview-link">➡️ Community</a> — Join the builders' loop
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <main>
-        <!-- Quick Links -->
+        <!-- Main Sections -->
         <section class="section">
             <div class="container">
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>🚀 Getting Started</h3>
-                        <p>New to VoidSEO? Start here with our quick setup guide and first workflow.</p>
+                <div class="docs-sections-grid">
+                    <div class="docs-section-card">
+                        <div class="section-icon">🚀</div>
+                        <h3>Getting Started</h3>
+                        <p class="section-goal"><strong>Goal:</strong> "Run your first workflow in 10 minutes."</p>
+                        <p>Covers installation, setup, and first automation example. Includes the 4 VOID steps applied to the PAA Explorer.</p>
                         <div class="mt-lg">
-                            <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                            <a href="getting-started/" class="btn btn-primary">Read Guide</a>
                         </div>
                     </div>
                     
-                    <div class="card">
-                        <h3>📚 VOID Loop Guide</h3>
-                        <p>Complete methodology documentation with examples and templates.</p>
+                    <div class="docs-section-card">
+                        <div class="section-icon">📚</div>
+                        <h3>The VOID Loop Framework</h3>
+                        <p class="section-goal"><strong>Goal:</strong> "Understand how we build everything."</p>
+                        <p>Full methodology, from Vision to Deep Dive, with templates and examples.</p>
                         <div class="mt-lg">
-                            <a href="../framework/index.html" class="btn btn-secondary">Framework</a>
+                            <a href="framework/" class="btn btn-primary">Learn the Framework</a>
                         </div>
                     </div>
                     
-                    <div class="card">
-                        <h3>🔧 API Reference</h3>
-                        <p>Technical documentation for all VoidSEO tools and integrations.</p>
+                    <div class="docs-section-card">
+                        <div class="section-icon">🛠️</div>
+                        <h3>Tools & Apps</h3>
+                        <p class="section-goal"><strong>Goal:</strong> "Discover our modular apps built with the VOID Loop."</p>
+                        <p>Each app = overview, usage, sample data, API reference.</p>
                         <div class="mt-lg">
-                            <a href="#api-reference" class="btn btn-secondary">API Docs</a>
+                            <a href="apps/" class="btn btn-primary">Browse Tools</a>
+                        </div>
+                    </div>
+                    
+                    <div class="docs-section-card">
+                        <div class="section-icon">🔧</div>
+                        <h3>API Reference</h3>
+                        <p class="section-goal"><strong>Goal:</strong> "Integrate VoidSEO data in your own workflows."</p>
+                        <p>Auth, endpoints, rate limits, and code examples.</p>
+                        <div class="mt-lg">
+                            <a href="api/" class="btn btn-primary">Open API Docs</a>
+                        </div>
+                    </div>
+                    
+                    <div class="docs-section-card">
+                        <div class="section-icon">💬</div>
+                        <h3>Community & Support</h3>
+                        <p class="section-goal"><strong>Goal:</strong> "You're not alone — join the builders."</p>
+                        <p>Discord, GitHub, and support channels.</p>
+                        <div class="mt-lg">
+                            <a href="community/" class="btn btn-primary">Join Discord</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Getting Started -->
+        <!-- Quick Preview -->
         <section class="section" id="getting-started">
             <div class="container">
-                <h2>Getting Started</h2>
+                <h2>Quick Preview</h2>
                 
-                <div class="callout">
-                    <h4>Prerequisites</h4>
-                    <ul>
-                        <li>Python 3.8+ installed</li>
-                        <li>Basic understanding of SEO concepts</li>
-                        <li>OpenAI API key (for AI-powered features)</li>
-                    </ul>
+                <div class="callout callout-info">
+                    <h4>🚀 New to VoidSEO?</h4>
+                    <p>Start with our comprehensive Getting Started guide to run your first VOID Loop workflow in 10 minutes.</p>
+                    <a href="getting-started/" class="btn btn-primary">Complete Getting Started Guide</a>
                 </div>
                 
-                <h3>Installation</h3>
-                <pre><code># Clone the VoidSEO tools repository
+                <div class="quick-preview-grid">
+                    <div class="preview-card">
+                        <h4>1. Install & Setup</h4>
+                        <pre><code># Clone and install
 git clone https://github.com/voidseo/tools.git
-cd tools
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your API keys</code></pre>
-                
-                <h3>Your First Workflow</h3>
-                <p>Let's create a simple PAA analysis workflow following the VOID Loop:</p>
-                
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h4>1. Vision</h4>
-                        <p>Identify content gaps in your niche by analyzing People Also Ask questions.</p>
+cd tools && pip install -r requirements.txt</code></pre>
                     </div>
                     
-                    <div class="card">
-                        <h4>2. Objective</h4>
-                        <p>Input: 10 seed keywords. Output: Clustered PAA questions with content opportunities.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h4>3. Implementation</h4>
+                    <div class="preview-card">
+                        <h4>2. Run Your First Workflow</h4>
                         <pre><code>from voidseo import PAAExplorer
 
 explorer = PAAExplorer()
-questions = explorer.scrape(['your', 'keywords'])
-clusters = explorer.cluster(questions)
-explorer.export_csv(clusters)</code></pre>
+results = explorer.scrape(['seo tools'])
+print(f"Found {len(results)} clusters")</code></pre>
                     </div>
-                    
-                    <div class="card">
-                        <h4>4. Deep Dive</h4>
-                        <p>Analyze the clusters, identify high-value opportunities, and plan your content strategy.</p>
-                    </div>
+                </div>
+                
+                <div class="text-center mt-lg">
+                    <a href="getting-started/" class="btn btn-primary">Full Installation Guide</a>
+                    <a href="framework/" class="btn btn-secondary">Learn the Framework</a>
                 </div>
             </div>
         </section>

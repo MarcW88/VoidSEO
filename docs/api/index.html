@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/auth-fallback.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference — VoidSEO Documentation</title>
+    <meta name="description" content="Complete API documentation for VoidSEO. Integrate SEO automation into your workflows with our REST API.">
+    
+    <link rel="canonical" href="https://voidseo.dev/docs/api/">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/index.html">Framework</a></li>
+                <li><a href="../../apps/index.html">Apps <span class="nav-badge">2 Free</span></a></li>
+                <li><a href="../../lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
+                <li><a href="../../docs/index.html" class="active">Docs</a></li>
+                <li><a href="../../pricing/index.html">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../../dashboard/free.html">Dashboard</a>
+                        <a href="../../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="../../docs/">Documentation</a> / <strong>API Reference</strong>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero docs-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🔧 API Reference</h1>
+                <p class="hero-subtitle">
+                    Integrate VoidSEO data in your own workflows — auth, endpoints, rate limits, and code examples
+                </p>
+                <div class="api-quick-info">
+                    <div class="api-info-item">
+                        <strong>Base URL:</strong> <code>https://api.voidseo.dev/v1</code>
+                    </div>
+                    <div class="api-info-item">
+                        <strong>Format:</strong> JSON REST API
+                    </div>
+                    <div class="api-info-item">
+                        <strong>Auth:</strong> Bearer Token
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Quick Start -->
+        <section class="section">
+            <div class="container">
+                <h2>Quick Start</h2>
+                
+                <div class="quick-start-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Get Your API Key</h4>
+                            <p>Sign up for a free account to get your API key:</p>
+                            <a href="../../signup/" class="btn btn-primary">Get API Key</a>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Make Your First Request</h4>
+                            <pre><code>curl -X POST https://api.voidseo.dev/v1/paa/scrape \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"keywords": ["seo tools"], "locale": "en-US"}'</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Process the Response</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "clusters": [...],
+    "total_questions": 45,
+    "processing_time": "2.3s"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authentication -->
+        <section class="section" id="authentication">
+            <div class="container">
+                <h2>Authentication</h2>
+                
+                <div class="auth-overview">
+                    <div class="callout callout-info">
+                        <h4>🔑 API Key Authentication</h4>
+                        <p>All API requests require authentication using your API key in the Authorization header as a Bearer token.</p>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div>
+                            <h4>Header Format</h4>
+                            <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                            
+                            <h4>Example Request</h4>
+                            <pre><code>curl -H "Authorization: Bearer sk-void-..." \
+     https://api.voidseo.dev/v1/paa/scrape</code></pre>
+                        </div>
+                        
+                        <div>
+                            <h4>Getting Your API Key</h4>
+                            <ol>
+                                <li>Sign up for a VoidSEO account</li>
+                                <li>Go to your dashboard</li>
+                                <li>Navigate to API Keys section</li>
+                                <li>Generate a new API key</li>
+                            </ol>
+                            
+                            <div class="security-note">
+                                <h5>🔒 Security Best Practices</h5>
+                                <ul>
+                                    <li>Never expose API keys in client-side code</li>
+                                    <li>Use environment variables</li>
+                                    <li>Rotate keys regularly</li>
+                                    <li>Monitor usage in your dashboard</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endpoints -->
+        <section class="section" id="endpoints">
+            <div class="container">
+                <h2>Endpoints</h2>
+                
+                <!-- PAA Explorer API -->
+                <div class="endpoint-section">
+                    <h3>🔍 PAA Explorer API</h3>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="http-method post">POST</span>
+                            <code>/paa/scrape</code>
+                        </div>
+                        
+                        <div class="endpoint-description">
+                            <p>Scrape People Also Ask questions for given keywords and return clustered results.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <pre><code>{
+  "keywords": ["seo tools", "keyword research"],
+  "locale": "en-US",
+  "max_questions": 10,
+  "cluster_method": "auto"
+}</code></pre>
+                            
+                            <h4>Parameters</h4>
+                            <div class="params-table">
+                                <div class="param-row">
+                                    <div class="param-name"><code>keywords</code></div>
+                                    <div class="param-type">array</div>
+                                    <div class="param-required">required</div>
+                                    <div class="param-description">List of keywords to analyze (max 10)</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name"><code>locale</code></div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-required">optional</div>
+                                    <div class="param-description">Search locale (default: "en-US")</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name"><code>max_questions</code></div>
+                                    <div class="param-type">integer</div>
+                                    <div class="param-required">optional</div>
+                                    <div class="param-description">Max questions per keyword (default: 10, max: 20)</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name"><code>cluster_method</code></div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-required">optional</div>
+                                    <div class="param-description">"auto", "kmeans", or "hierarchical" (default: "auto")</div>
+                                </div>
+                            </div>
+                            
+                            <h4>Response</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "clusters": [
+      {
+        "id": 1,
+        "label": "SEO Tools Comparison",
+        "questions": [
+          "What are the best SEO tools?",
+          "Free vs paid SEO tools",
+          "SEO tools for beginners"
+        ],
+        "intent": "informational",
+        "confidence": 0.87
+      }
+    ],
+    "total_questions": 45,
+    "total_clusters": 6,
+    "processing_time": "2.3s"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Overview Detector API -->
+                <div class="endpoint-section">
+                    <h3>🤖 AI Overview Detector API</h3>
+                    
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="http-method post">POST</span>
+                            <code>/ai-overview/detect</code>
+                        </div>
+                        
+                        <div class="endpoint-description">
+                            <p>Check if queries trigger AI Overviews and analyze their impact on organic results.</p>
+                        </div>
+                        
+                        <div class="endpoint-details">
+                            <h4>Request Body</h4>
+                            <pre><code>{
+  "queries": ["best seo tools 2025", "technical seo audit"],
+  "locale": "en-US",
+  "include_screenshots": false
+}</code></pre>
+                            
+                            <h4>Response</h4>
+                            <pre><code>{
+  "status": "success",
+  "data": {
+    "results": [
+      {
+        "query": "best seo tools 2025",
+        "ai_overview_detected": true,
+        "position": 1,
+        "content_sources": 3,
+        "organic_results_pushed_down": true,
+        "estimated_ctr_impact": -0.23
+      }
+    ],
+    "detection_accuracy": 0.95,
+    "timestamp": "2025-01-19T10:30:00Z"
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keyword Clusterer API -->
+                <div class="endpoint-section">
+                    <h3>🔗 Keyword Clusterer API</h3>
+                    
+                    <div class="endpoint-card beta-endpoint">
+                        <div class="endpoint-header">
+                            <span class="http-method post">POST</span>
+                            <code>/keywords/cluster</code>
+                            <span class="beta-badge">Beta</span>
+                        </div>
+                        
+                        <div class="endpoint-description">
+                            <p>Cluster keywords by semantic similarity and search intent using advanced embeddings.</p>
+                        </div>
+                        
+                        <div class="callout callout-warning">
+                            <h4>🚧 Beta Endpoint</h4>
+                            <p>This endpoint is currently in beta. Contact support for access.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rate Limits -->
+        <section class="section" id="rate-limits">
+            <div class="container">
+                <h2>Rate Limits</h2>
+                
+                <div class="rate-limits-overview">
+                    <div class="callout callout-info">
+                        <h4>📊 Current Rate Limits</h4>
+                        <p>Rate limits are applied per API key and reset every hour. Limits vary by subscription tier.</p>
+                    </div>
+                    
+                    <div class="rate-limits-table">
+                        <div class="rate-limit-tier">
+                            <h4>🆓 Free Tier</h4>
+                            <div class="limit-details">
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">PAA Scraping</span>
+                                    <span class="limit-value">50 requests/hour</span>
+                                </div>
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">AI Overview Detection</span>
+                                    <span class="limit-value">25 requests/hour</span>
+                                </div>
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">Max keywords per request</span>
+                                    <span class="limit-value">5 keywords</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rate-limit-tier">
+                            <h4>💎 Builder Tier</h4>
+                            <div class="limit-details">
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">PAA Scraping</span>
+                                    <span class="limit-value">500 requests/hour</span>
+                                </div>
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">AI Overview Detection</span>
+                                    <span class="limit-value">250 requests/hour</span>
+                                </div>
+                                <div class="limit-item">
+                                    <span class="limit-endpoint">Max keywords per request</span>
+                                    <span class="limit-value">20 keywords</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rate-limit-headers">
+                        <h4>Rate Limit Headers</h4>
+                        <p>Every API response includes rate limit information in the headers:</p>
+                        <pre><code>X-RateLimit-Limit: 50
+X-RateLimit-Remaining: 47
+X-RateLimit-Reset: 1642680000</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Handling -->
+        <section class="section" id="error-handling">
+            <div class="container">
+                <h2>Error Handling</h2>
+                
+                <div class="error-overview">
+                    <div class="callout callout-warning">
+                        <h4>⚠️ Error Response Format</h4>
+                        <p>All errors follow a consistent JSON format with HTTP status codes and detailed error messages.</p>
+                    </div>
+                    
+                    <div class="error-format">
+                        <h4>Standard Error Response</h4>
+                        <pre><code>{
+  "status": "error",
+  "error": {
+    "code": "INVALID_API_KEY",
+    "message": "The provided API key is invalid or expired",
+    "details": {
+      "timestamp": "2025-01-19T10:30:00Z",
+      "request_id": "req_abc123"
+    }
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="error-codes">
+                        <h4>Common Error Codes</h4>
+                        <div class="error-codes-table">
+                            <div class="error-row">
+                                <div class="error-code">400</div>
+                                <div class="error-name">Bad Request</div>
+                                <div class="error-description">Invalid request parameters or malformed JSON</div>
+                            </div>
+                            <div class="error-row">
+                                <div class="error-code">401</div>
+                                <div class="error-name">Unauthorized</div>
+                                <div class="error-description">Missing or invalid API key</div>
+                            </div>
+                            <div class="error-row">
+                                <div class="error-code">429</div>
+                                <div class="error-name">Rate Limited</div>
+                                <div class="error-description">Too many requests, rate limit exceeded</div>
+                            </div>
+                            <div class="error-row">
+                                <div class="error-code">500</div>
+                                <div class="error-name">Server Error</div>
+                                <div class="error-description">Internal server error, try again later</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Examples -->
+        <section class="section" id="code-examples">
+            <div class="container">
+                <h2>Code Examples</h2>
+                
+                <div class="code-examples-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="python">Python</button>
+                        <button class="tab-btn" data-tab="javascript">JavaScript</button>
+                        <button class="tab-btn" data-tab="curl">cURL</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="python">
+                        <h4>Python Example</h4>
+                        <pre><code>import requests
+import json
+
+# VoidSEO API client
+class VoidSEOClient:
+    def __init__(self, api_key):
+        self.api_key = api_key
+        self.base_url = "https://api.voidseo.dev/v1"
+        self.headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+    
+    def scrape_paa(self, keywords, locale="en-US", max_questions=10):
+        """Scrape PAA questions for keywords"""
+        url = f"{self.base_url}/paa/scrape"
+        data = {
+            "keywords": keywords,
+            "locale": locale,
+            "max_questions": max_questions
+        }
+        
+        response = requests.post(url, headers=self.headers, json=data)
+        response.raise_for_status()
+        return response.json()
+
+# Usage
+client = VoidSEOClient("your-api-key-here")
+result = client.scrape_paa(["seo tools", "keyword research"])
+print(f"Found {result['data']['total_questions']} questions in {result['data']['total_clusters']} clusters")</code></pre>
+                    </div>
+                    
+                    <div class="tab-content" id="javascript">
+                        <h4>JavaScript Example</h4>
+                        <pre><code>class VoidSEOClient {
+    constructor(apiKey) {
+        this.apiKey = apiKey;
+        this.baseUrl = 'https://api.voidseo.dev/v1';
+    }
+    
+    async scrapePAA(keywords, locale = 'en-US', maxQuestions = 10) {
+        const response = await fetch(`${this.baseUrl}/paa/scrape`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${this.apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                keywords,
+                locale,
+                max_questions: maxQuestions
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`API Error: ${response.status}`);
+        }
+        
+        return await response.json();
+    }
+}
+
+// Usage
+const client = new VoidSEOClient('your-api-key-here');
+client.scrapePAA(['seo tools', 'keyword research'])
+    .then(result => {
+        console.log(`Found ${result.data.total_questions} questions`);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });</code></pre>
+                    </div>
+                    
+                    <div class="tab-content" id="curl">
+                        <h4>cURL Example</h4>
+                        <pre><code># PAA Scraping
+curl -X POST https://api.voidseo.dev/v1/paa/scrape \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "keywords": ["seo tools", "keyword research"],
+    "locale": "en-US",
+    "max_questions": 10
+  }'
+
+# AI Overview Detection
+curl -X POST https://api.voidseo.dev/v1/ai-overview/detect \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "queries": ["best seo tools 2025"],
+    "locale": "en-US"
+  }'</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDKs and Libraries -->
+        <section class="section">
+            <div class="container">
+                <h2>SDKs & Libraries</h2>
+                
+                <div class="sdks-grid">
+                    <div class="sdk-card">
+                        <div class="sdk-icon">🐍</div>
+                        <h4>Python SDK</h4>
+                        <p>Official Python library with full API coverage and type hints.</p>
+                        <pre><code>pip install voidseo</code></pre>
+                        <a href="https://github.com/voidseo/python-sdk" class="btn btn-secondary">View on GitHub</a>
+                    </div>
+                    
+                    <div class="sdk-card">
+                        <div class="sdk-icon">📦</div>
+                        <h4>Node.js SDK</h4>
+                        <p>TypeScript-first Node.js library for seamless integration.</p>
+                        <pre><code>npm install @voidseo/sdk</code></pre>
+                        <a href="https://github.com/voidseo/node-sdk" class="btn btn-secondary">View on GitHub</a>
+                    </div>
+                    
+                    <div class="sdk-card coming-soon">
+                        <div class="sdk-icon">🔷</div>
+                        <h4>Go SDK</h4>
+                        <p>High-performance Go library for enterprise applications.</p>
+                        <div class="coming-soon-badge">Coming Soon</div>
+                        <a href="#" class="btn btn-secondary disabled">Q2 2025</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2025 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/nav-auth.js"></script>
+    
+    <!-- Tab functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../js/auth-fallback.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools & Apps — VoidSEO Documentation</title>
+    <meta name="description" content="Complete documentation for all VoidSEO tools and apps built with the VOID Loop framework.">
+    
+    <link rel="canonical" href="https://voidseo.dev/docs/apps/">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../../framework/index.html">Framework</a></li>
+                <li><a href="../../apps/index.html">Apps <span class="nav-badge">2 Free</span></a></li>
+                <li><a href="../../lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
+                <li><a href="../../docs/index.html" class="active">Docs</a></li>
+                <li><a href="../../pricing/index.html">Pricing</a></li>
+                
+                <!-- Auth Links - shown when not authenticated -->
+                <li id="auth-signup" style="display: none;"><a href="../../signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login" style="display: none;"><a href="../../login/" class="nav-auth">Login</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li id="user-menu" style="display: none;" class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">user@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="../../dashboard/free.html">Dashboard</a>
+                        <a href="../../upgrade/">Upgrade</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav>
+                <a href="../../docs/">Documentation</a> / <strong>Tools & Apps</strong>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero docs-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🛠️ Tools & Apps</h1>
+                <p class="hero-subtitle">
+                    Discover our modular apps built with the VOID Loop — each app = overview, usage, sample data, API reference
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Apps Overview -->
+        <section class="section">
+            <div class="container">
+                <div class="callout callout-info">
+                    <h4>Built with VOID Loop</h4>
+                    <p>Every VoidSEO app follows the same methodology: <strong>Vision → Objective → Implementation → Deep Dive</strong>. This ensures transparency, reproducibility, and continuous improvement.</p>
+                </div>
+
+                <div class="apps-status-grid">
+                    <div class="status-card status-live">
+                        <div class="status-indicator"></div>
+                        <h4>🆓 Free Preview Apps</h4>
+                        <p>2 apps available with example data</p>
+                    </div>
+                    
+                    <div class="status-card status-beta">
+                        <div class="status-indicator"></div>
+                        <h4>🔒 Beta Apps</h4>
+                        <p>1 app in development</p>
+                    </div>
+                    
+                    <div class="status-card status-planned">
+                        <div class="status-indicator"></div>
+                        <h4>📋 Planned Apps</h4>
+                        <p>3 apps in roadmap</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Apps -->
+        <section class="section">
+            <div class="container">
+                <h2>🆓 Free Preview Apps</h2>
+                
+                <!-- PAA Explorer -->
+                <div class="app-documentation-card">
+                    <div class="app-header">
+                        <div class="app-icon">🔍</div>
+                        <div class="app-info">
+                            <h3>PAA Explorer</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-free">Free Preview</span>
+                                <span class="badge badge-stable">Stable</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-description">
+                        <p>Scrape and cluster People Also Ask questions to identify content gaps and seasonal trends. Built to automate content research at scale.</p>
+                    </div>
+                    
+                    <div class="app-details-grid">
+                        <div class="detail-section">
+                            <h4>🎯 Use Cases</h4>
+                            <ul>
+                                <li>Content gap analysis</li>
+                                <li>Keyword research expansion</li>
+                                <li>Competitor content mapping</li>
+                                <li>Seasonal trend identification</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>⚙️ Technical Stack</h4>
+                            <ul>
+                                <li>Python + Playwright (scraping)</li>
+                                <li>OpenAI Embeddings (clustering)</li>
+                                <li>Scikit-learn (ML algorithms)</li>
+                                <li>Streamlit (web interface)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>📊 Sample Output</h4>
+                            <div class="code-sample">
+                                <pre><code>Cluster 1: "SEO Tools Comparison" (12 questions)
+├── "What are the best SEO tools?"
+├── "SEO tools vs manual analysis"
+└── "Free SEO tools alternatives"
+
+Cluster 2: "Technical SEO" (8 questions)
+├── "How to fix crawl errors?"
+├── "Site speed optimization tips"
+└── "Schema markup importance"</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>🔗 Resources</h4>
+                            <div class="resource-links">
+                                <a href="../../apps/paa-explorer/preview.html" class="btn btn-primary">Try Preview</a>
+                                <a href="paa-explorer/" class="btn btn-secondary">Full Documentation</a>
+                                <a href="../../apps/paa-explorer/" class="btn btn-secondary">Live App</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Overview Detector -->
+                <div class="app-documentation-card">
+                    <div class="app-header">
+                        <div class="app-icon">🤖</div>
+                        <div class="app-info">
+                            <h3>AI Overview Detector</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-free">Free Preview</span>
+                                <span class="badge badge-beta">Beta</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-description">
+                        <p>Monitor which queries trigger AI Overviews and analyze their impact on organic traffic. Track the evolution of SERP features in real-time.</p>
+                    </div>
+                    
+                    <div class="app-details-grid">
+                        <div class="detail-section">
+                            <h4>🎯 Use Cases</h4>
+                            <ul>
+                                <li>AI Overview impact tracking</li>
+                                <li>SERP feature monitoring</li>
+                                <li>Organic traffic analysis</li>
+                                <li>Search landscape changes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>⚙️ Technical Stack</h4>
+                            <ul>
+                                <li>Python + Selenium (detection)</li>
+                                <li>Google Search Console API</li>
+                                <li>Computer Vision (screenshot analysis)</li>
+                                <li>Time-series analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>📊 Sample Output</h4>
+                            <div class="code-sample">
+                                <pre><code>Query: "best seo tools 2025"
+├── AI Overview: ✅ Detected
+├── Impact: -23% organic CTR
+├── Position: Above organic results
+└── Content Source: 3 websites cited
+
+Query: "technical seo audit"
+├── AI Overview: ❌ Not detected
+├── Organic CTR: Stable
+└── Traditional SERP features present</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>🔗 Resources</h4>
+                            <div class="resource-links">
+                                <a href="../../apps/ai-overview-detector/preview.html" class="btn btn-primary">Try Preview</a>
+                                <a href="ai-overview-detector/" class="btn btn-secondary">Full Documentation</a>
+                                <a href="../../apps/ai-overview-detector/" class="btn btn-secondary">Live App</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beta Apps -->
+        <section class="section">
+            <div class="container">
+                <h2>🔒 Beta Apps</h2>
+                
+                <div class="app-documentation-card beta-app">
+                    <div class="app-header">
+                        <div class="app-icon">🔗</div>
+                        <div class="app-info">
+                            <h3>Keyword Clusterer</h3>
+                            <div class="app-badges">
+                                <span class="badge badge-beta">Beta Access</span>
+                                <span class="badge badge-development">In Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-description">
+                        <p>Advanced semantic clustering for keywords and content planning. Group keywords by search intent and semantic similarity using state-of-the-art embeddings.</p>
+                    </div>
+                    
+                    <div class="beta-info">
+                        <div class="callout callout-warning">
+                            <h4>🚧 Beta Status</h4>
+                            <p>This app is currently in beta testing. Features may change and data should be validated before production use.</p>
+                        </div>
+                        
+                        <div class="beta-features">
+                            <h4>Current Features</h4>
+                            <ul>
+                                <li>✅ Semantic keyword clustering</li>
+                                <li>✅ Intent classification</li>
+                                <li>🔄 Search volume integration (in progress)</li>
+                                <li>📋 Content brief generation (planned)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="beta-access">
+                            <h4>Get Beta Access</h4>
+                            <p>Join our waitlist to get early access and help shape the development:</p>
+                            <a href="../../signup/" class="btn btn-primary">Join Beta Waitlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planned Apps -->
+        <section class="section">
+            <div class="container">
+                <h2>📋 Planned Apps</h2>
+                
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon">🔗</div>
+                        <h4>Internal Link Analyzer</h4>
+                        <p>Optimize internal linking structure and identify link opportunities at scale.</p>
+                        <div class="roadmap-status">
+                            <span class="status-badge status-q1">Q1 2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon">📊</div>
+                        <h4>SERP Feature Tracker</h4>
+                        <p>Monitor all SERP features (featured snippets, images, videos) across your keyword portfolio.</p>
+                        <div class="roadmap-status">
+                            <span class="status-badge status-q2">Q2 2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-card">
+                        <div class="roadmap-icon">🎯</div>
+                        <h4>Content Gap Analyzer</h4>
+                        <p>Compare your content against competitors and identify high-value content opportunities.</p>
+                        <div class="roadmap-status">
+                            <span class="status-badge status-q2">Q2 2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-cta">
+                    <h3>Influence Our Roadmap</h3>
+                    <p>Have ideas for new apps or features? Join our community and help prioritize development:</p>
+                    <div class="cta-buttons">
+                        <a href="../../community/" class="btn btn-primary">Join Discord</a>
+                        <a href="https://github.com/voidseo/roadmap" class="btn btn-secondary">View Full Roadmap</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Integration -->
+        <section class="section">
+            <div class="container">
+                <h2>🔧 API Integration</h2>
+                
+                <div class="api-overview">
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>Unified API Access</h3>
+                            <p>All VoidSEO apps share the same API structure and authentication system. Learn once, use everywhere.</p>
+                            
+                            <h4>Common Endpoints</h4>
+                            <ul>
+                                <li><code>POST /paa/scrape</code> - PAA Explorer</li>
+                                <li><code>POST /ai-overview/detect</code> - AI Overview Detector</li>
+                                <li><code>POST /keywords/cluster</code> - Keyword Clusterer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="api-example">
+                            <h4>Quick Example</h4>
+                            <pre><code>curl -X POST \
+  https://api.voidseo.dev/v1/paa/scrape \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "keywords": ["seo tools", "keyword research"],
+    "locale": "en-US",
+    "max_questions": 10
+  }'</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="api-cta">
+                        <a href="../api/" class="btn btn-primary">Complete API Documentation</a>
+                        <a href="../../signup/" class="btn btn-secondary">Get API Key</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2025 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    
+    <script>
+        window.NEXT_PUBLIC_SUPABASE_URL = 'https://seikmtsmsysspvafjcir.supabase.co';
+        window.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlaWttdHNtc3lzc3B2YWZqY2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1MzIzNTcsImV4cCI6MjA3NjEwODM1N30.q6V4rZjU6oUPlmgxVLHbcaPS4vi1fWrkZf4tYD6n-C8';
+    </script>
+    
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/nav-auth.js"></script>
+</body>
+</html>
