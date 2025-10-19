@@ -488,12 +488,12 @@ a:hover {
 
 .hero h1 {
   margin-bottom: var(--spacing-md);
-  color: var(--void-white);
-  /* Gradient désactivé pour visibilité */
-  /* background: linear-gradient(135deg, var(--void-white) 0%, var(--void-accent) 100%);
+  background: linear-gradient(135deg, var(--void-white) 0%, var(--void-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; */
+  background-clip: text;
+  /* Fallback pour navigateurs non compatibles */
+  color: var(--void-white);
 }
 
 .hero-subtitle {
@@ -2416,12 +2416,7 @@ a:hover {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid var(--void-gray);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
 }
 
 .hero-context {
