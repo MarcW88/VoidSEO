@@ -2323,6 +2323,23 @@ a:hover {
   }
 }
 
+/* Why Section */
+.why-section {
+  padding: 2rem 0;
+  background: linear-gradient(135deg, var(--void-dark) 0%, var(--void-gray) 100%);
+  border-top: 1px solid var(--void-gray);
+  border-bottom: 1px solid var(--void-gray);
+}
+
+.why-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--void-white);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .cluster-details-panel {
@@ -2338,5 +2355,10 @@ a:hover {
   .transparency-banner {
     font-size: 0.9rem;
     padding: 0.75rem;
+  }
+  
+  .why-text {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
 }
