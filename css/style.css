@@ -2340,6 +2340,61 @@ a:hover {
   font-weight: 400;
 }
 
+.why-text-emphasis {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--void-accent);
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  font-weight: 500;
+}
+
+/* Method Note */
+.method-note {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--void-dark);
+  border-radius: 8px;
+  border-left: 4px solid var(--void-accent);
+}
+
+.method-note p {
+  color: var(--void-light-gray);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Manifesto */
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.manifesto-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--void-dark);
+  border-radius: 8px;
+  border: 1px solid var(--void-gray);
+}
+
+.manifesto-item h4 {
+  color: var(--void-accent);
+  margin: 0;
+  font-size: 1rem;
+}
+
+.manifesto-text {
+  font-size: 1.1rem;
+  color: var(--void-light-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .cluster-details-panel {
