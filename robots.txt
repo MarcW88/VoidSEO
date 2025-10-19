@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://voidseo.dev/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /.netlify/
+Disallow: /supabase/
+
+# Allow important pages
+Allow: /
+Allow: /framework/
+Allow: /apps/
+Allow: /pricing/
+Allow: /about.html
+Allow: /case-studies.html
+Allow: /signup/
+Allow: /login/
+
+# Crawl delay (optional)
+Crawl-delay: 1
