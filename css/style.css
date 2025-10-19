@@ -488,10 +488,12 @@ a:hover {
 
 .hero h1 {
   margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--void-white) 0%, var(--void-accent) 100%);
+  color: var(--void-white);
+  /* Gradient désactivé pour visibilité */
+  /* background: linear-gradient(135deg, var(--void-white) 0%, var(--void-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; */
 }
 
 .hero-subtitle {
@@ -2691,7 +2693,8 @@ a:hover {
 .docs-toc {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--void-dark);
+  border: 1px solid var(--void-gray);
   border-radius: 6px;
   font-size: 0.9rem;
 }
