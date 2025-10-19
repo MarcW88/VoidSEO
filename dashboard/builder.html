@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Dashboard — VoidSEO</title>
+    <meta name="description" content="Builder tier dashboard with full access to VoidSEO apps, unlimited analyses, and source code.">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">VoidSEO</a>
+            <ul class="nav-links">
+                <li><a href="../framework/index.html">Framework</a></li>
+                <li><a href="../apps/index.html">Apps</a></li>
+                <li><a href="../pricing/index.html">Pricing</a></li>
+                
+                <!-- User Menu - shown when authenticated -->
+                <li class="user-menu-container">
+                    <div class="user-menu-trigger">
+                        <span id="user-email">builder@example.com</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="builder.html" class="active">Dashboard</a>
+                        <a href="../pricing/">Billing</a>
+                        <a href="#" id="nav-logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header" style="margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h1 style="color: var(--void-white); margin-bottom: 0.5rem;">Builder Dashboard</h1>
+                        <p style="color: var(--void-light-gray);">Full access to VoidSEO apps and methodology</p>
+                    </div>
+                    <div style="background: var(--void-blue); color: var(--void-black); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">
+                        💎 Builder Tier
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-4" style="gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--void-accent);">∞</div>
+                    <div style="color: var(--void-light-gray); font-size: 0.9rem;">Analyses Remaining</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--void-blue);">15</div>
+                    <div style="color: var(--void-light-gray); font-size: 0.9rem;">Apps Available</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--void-orange);">47</div>
+                    <div style="color: var(--void-light-gray); font-size: 0.9rem;">Analyses This Month</div>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--void-red);">23</div>
+                    <div style="color: var(--void-light-gray); font-size: 0.9rem;">Days Active</div>
+                </div>
+            </div>
+
+            <!-- Apps Grid -->
+            <section style="margin-bottom: 3rem;">
+                <h2 style="color: var(--void-white); margin-bottom: 2rem;">Your Apps</h2>
+                
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <!-- PAA Explorer -->
+                    <div class="card" style="border-left: 4px solid var(--void-accent);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="color: var(--void-accent);">PAA Explorer</h3>
+                            <span style="background: var(--void-accent); color: var(--void-black); padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">ACTIVE</span>
+                        </div>
+                        <p style="color: var(--void-light-gray); margin-bottom: 1.5rem;">
+                            Scrape and cluster People Also Ask questions to identify content gaps and seasonal trends.
+                        </p>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">Last used: 2 hours ago</div>
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem;">Total analyses: 23</div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="https://paa-explorer.netlify.app/" target="_blank" class="btn btn-primary" style="flex: 1;">Launch App ▌</a>
+                            <a href="../apps/paa-explorer/" class="btn btn-secondary">Docs</a>
+                        </div>
+                    </div>
+
+                    <!-- AI Overview Detector -->
+                    <div class="card" style="border-left: 4px solid var(--void-blue);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="color: var(--void-blue);">AI Overview Detector</h3>
+                            <span style="background: var(--void-blue); color: var(--void-black); padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">ACTIVE</span>
+                        </div>
+                        <p style="color: var(--void-light-gray); margin-bottom: 1.5rem;">
+                            Monitor which queries trigger AI Overviews and analyze their impact on organic traffic.
+                        </p>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">Last used: 1 day ago</div>
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem;">Total analyses: 12</div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn btn-primary" style="flex: 1;" onclick="alert('Coming Soon!')">Launch App ▌</button>
+                            <a href="../apps/ai-overview-detector/" class="btn btn-secondary">Docs</a>
+                        </div>
+                    </div>
+
+                    <!-- Keyword Clusterer -->
+                    <div class="card" style="border-left: 4px solid var(--void-orange);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                            <h3 style="color: var(--void-orange);">Keyword Clusterer</h3>
+                            <span style="background: var(--void-orange); color: var(--void-black); padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">ACTIVE</span>
+                        </div>
+                        <p style="color: var(--void-light-gray); margin-bottom: 1.5rem;">
+                            Group keywords by semantic similarity and search intent using embeddings and clustering algorithms.
+                        </p>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem; margin-bottom: 0.5rem;">Last used: 3 days ago</div>
+                            <div style="color: var(--void-light-gray); font-size: 0.9rem;">Total analyses: 8</div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button class="btn btn-primary" style="flex: 1;" onclick="alert('Coming Soon!')">Launch App ▌</button>
+                            <a href="../apps/keyword-cluster/" class="btn btn-secondary">Docs</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section style="margin-bottom: 3rem;">
+                <h2 style="color: var(--void-white); margin-bottom: 2rem;">Recent Activity</h2>
+                
+                <div class="card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: between; align-items: center; padding: 1rem; background: var(--void-dark); border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <div style="color: var(--void-white); font-weight: 600;">PAA Analysis: "content marketing"</div>
+                                <div style="color: var(--void-light-gray); font-size: 0.9rem;">47 questions found, 5 clusters identified</div>
+                            </div>
+                            <div style="color: var(--void-light-gray); font-size: 0.8rem;">2 hours ago</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: between; align-items: center; padding: 1rem; background: var(--void-dark); border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <div style="color: var(--void-white); font-weight: 600;">PAA Analysis: "seo tools"</div>
+                                <div style="color: var(--void-light-gray); font-size: 0.9rem;">32 questions found, 6 clusters identified</div>
+                            </div>
+                            <div style="color: var(--void-light-gray); font-size: 0.8rem;">1 day ago</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: between; align-items: center; padding: 1rem; background: var(--void-dark); border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <div style="color: var(--void-white); font-weight: 600;">Keyword Clustering: E-commerce project</div>
+                                <div style="color: var(--void-light-gray); font-size: 0.9rem;">1,247 keywords processed, 23 clusters</div>
+                            </div>
+                            <div style="color: var(--void-light-gray); font-size: 0.8rem;">3 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources -->
+            <section>
+                <h2 style="color: var(--void-white); margin-bottom: 2rem;">Builder Resources</h2>
+                
+                <div class="grid grid-2" style="gap: 2rem;">
+                    <div class="card">
+                        <h3 style="color: var(--void-accent);">📚 Documentation</h3>
+                        <ul style="color: var(--void-light-gray); line-height: 1.6;">
+                            <li><a href="../framework/" style="color: var(--void-accent);">VOID Loop Framework</a></li>
+                            <li><a href="../apps/" style="color: var(--void-accent);">App Documentation</a></li>
+                            <li><a href="../templates/" style="color: var(--void-accent);">Templates & Workflows</a></li>
+                            <li><a href="../case-studies.html" style="color: var(--void-accent);">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 style="color: var(--void-blue);">🛠 Developer Tools</h3>
+                        <ul style="color: var(--void-light-gray); line-height: 1.6;">
+                            <li><a href="#" style="color: var(--void-blue);">Source Code Access</a></li>
+                            <li><a href="#" style="color: var(--void-blue);">API Documentation</a></li>
+                            <li><a href="#" style="color: var(--void-blue);">Custom Integrations</a></li>
+                            <li><a href="#" style="color: var(--void-blue);">Community Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center text-muted">
+            <p>&copy; 2025 VoidSEO. Built with the VOID Loop framework.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/interactions.js"></script>
+    <script src="../js/analytics.js"></script>
+    
+    <style>
+        .dashboard-main {
+            padding: 2rem 0;
+            margin-top: 80px; /* Compensation pour header fixe */
+        }
+        
+        .dashboard-header {
+            background: var(--void-dark);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--void-blue);
+        }
+        
+        .user-menu-container .active {
+            color: var(--void-accent) !important;
+            font-weight: 600;
+        }
+    </style>
+</body>
+</html>
