@@ -2395,6 +2395,242 @@ a:hover {
   font-style: italic;
 }
 
+/* Hero Enhancements */
+.hero {
+  background: linear-gradient(180deg, #f8f8f8 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--void-gray);
+}
+
+.void-signature {
+  color: var(--void-accent);
+  font-weight: bold;
+}
+
+.hero-cta-wrapper {
+  margin-top: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--void-gray);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-context {
+  color: var(--void-light-gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.step-card {
+  background: var(--void-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--void-gray);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-card:hover {
+  background: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.step-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--void-accent);
+  color: var(--void-black);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.step-card h4 {
+  color: var(--void-black);
+  margin-bottom: 1rem;
+}
+
+.step-card p {
+  color: var(--void-light-gray);
+  margin-bottom: 1.5rem;
+}
+
+.step-btn {
+  color: var(--void-accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.step-btn:hover {
+  border-bottom-color: var(--void-accent);
+}
+
+/* Apps Grid */
+.apps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.app-card {
+  background: var(--void-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--void-gray);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.app-card.alt-bg {
+  background: #f9f9f9;
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-accent-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--void-accent);
+  border-radius: 4px 0 0 4px;
+}
+
+.app-separator {
+  height: 1px;
+  background: var(--void-gray);
+  margin: 0 2rem;
+}
+
+.free-badge {
+  background: var(--void-accent);
+  color: var(--void-black);
+}
+
+.beta-badge {
+  background: var(--void-red);
+  color: var(--void-white);
+}
+
+/* Manifesto Enhancements */
+.manifesto-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--void-white);
+  border-radius: 8px;
+  border: 1px solid var(--void-gray);
+}
+
+.manifesto-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.manifesto-item h4 {
+  color: var(--void-black);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.manifesto-item p {
+  color: var(--void-light-gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.manifesto-quote {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.manifesto-quote blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--void-black);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #f8f8f8;
+  border-top: 1px solid var(--void-gray);
+  border-bottom: 1px solid var(--void-gray);
+}
+
+/* Global Spacing */
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  border-top: 2px solid var(--void-gray);
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step-card {
+    padding: 1.5rem;
+  }
+  
+  .app-card {
+    padding: 1.5rem;
+  }
+  
+  .manifesto-item {
+    padding: 1.5rem;
+  }
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .cluster-details-panel {
