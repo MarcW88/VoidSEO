@@ -2617,7 +2617,7 @@ a:hover {
   background: var(--void-dark);
   padding: 1rem 0;
   border-bottom: 1px solid var(--void-gray);
-  margin-top: 80px; /* Compensation pour header fixe */
+  margin-top: 100px; /* Compensation pour header fixe */
 }
 
 .breadcrumb nav {

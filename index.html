@@ -31,6 +31,24 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Fix pour supprimer cadres grisâtres -->
+    <style>
+        /* Suppression des backgrounds gris sur homepage */
+        .hero, .hero *, .section, .section * {
+            background: transparent !important;
+        }
+        
+        /* Sauf les éléments qui ont besoin de background spécifique */
+        .card, .btn, .testimonials .card, [style*="background: var(--void-"] {
+            background: revert !important;
+        }
+        
+        /* Navigation complète visible */
+        #auth-signup, #auth-login, #user-menu {
+            display: block !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
