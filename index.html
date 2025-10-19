@@ -45,8 +45,14 @@
         }
         
         /* Navigation complète visible */
-        #auth-signup, #auth-login, #user-menu {
-            display: block !important;
+        #auth-signup, #auth-login {
+            display: list-item !important;
+        }
+        
+        /* Fix boutons invisibles */
+        .btn {
+            opacity: 1 !important;
+            visibility: visible !important;
         }
     </style>
 </head>
@@ -57,12 +63,14 @@
             <a href="index.html" class="logo">VoidSEO</a>
             <ul class="nav-links">
                 <li><a href="framework/index.html">Framework</a></li>
-                <li><a href="apps/index.html">Apps</a></li>
+                <li><a href="apps/index.html">Apps <span class="nav-badge">Free</span></a></li>
+                <li><a href="lab/index.html">Lab <span class="nav-badge experimental">Beta</span></a></li>
+                <li><a href="docs/index.html">Docs</a></li>
                 <li><a href="pricing/index.html">Pricing</a></li>
                 
                 <!-- Auth Links - shown when not authenticated -->
-                <li id="auth-signup" style="display: none;"><a href="signup/" class="nav-auth">Sign Up</a></li>
-                <li id="auth-login" style="display: none;"><a href="login/" class="nav-auth">Login</a></li>
+                <li id="auth-signup"><a href="signup/" class="nav-auth">Sign Up</a></li>
+                <li id="auth-login"><a href="login/" class="nav-auth">Login</a></li>
                 
                 <!-- User Menu - shown when authenticated -->
                 <li id="user-menu" style="display: none;" class="user-menu-container">

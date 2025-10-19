@@ -2637,7 +2637,7 @@ a:hover {
 .docs-nav-preview {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--void-dark);
   border-radius: 8px;
   border: 1px solid var(--void-gray);
 }
