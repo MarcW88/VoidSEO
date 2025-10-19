@@ -2,12 +2,33 @@
 // Handles uniform navigation across all pages
 
 function initializeNavAuth() {
+    // Show auth buttons immediately (don't wait for DOMContentLoaded)
+    function showAuthButtons() {
+        const authSignup = document.getElementById('auth-signup');
+        const authLogin = document.getElementById('auth-login');
+        const userMenu = document.getElementById('user-menu');
+        
+        if (authSignup) authSignup.style.display = 'block';
+        if (authLogin) authLogin.style.display = 'block';
+        if (userMenu) userMenu.style.display = 'none';
+    }
+    
+    // Show buttons immediately if elements exist
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showAuthButtons);
+    } else {
+        showAuthButtons();
+    }
+    
     document.addEventListener('DOMContentLoaded', async function() {
         const authSignup = document.getElementById('auth-signup');
         const authLogin = document.getElementById('auth-login');
         const userMenu = document.getElementById('user-menu');
         const userEmail = document.getElementById('user-email');
         const navLogout = document.getElementById('nav-logout');
+        
+        // Ensure auth buttons are visible by default
+        showAuthButtons();
         
         // Load config
         const SUPABASE_URL = window.NEXT_PUBLIC_SUPABASE_URL;
@@ -20,7 +41,7 @@ function initializeNavAuth() {
                 const { data: { session } } = await supabase.auth.getSession();
                 
                 if (session && session.user) {
-                    // User is authenticated - show user menu
+                    // User is authenticated - show user menu, hide auth buttons
                     if (authSignup) authSignup.style.display = 'none';
                     if (authLogin) authLogin.style.display = 'none';
                     if (userMenu) userMenu.style.display = 'block';
@@ -34,19 +55,14 @@ function initializeNavAuth() {
                     
                     console.log('✅ User authenticated in nav:', session.user.email);
                 } else {
-                    // User not authenticated - show auth links
-                    if (authSignup) authSignup.style.display = 'block';
-                    if (authLogin) authLogin.style.display = 'block';
-                    if (userMenu) userMenu.style.display = 'none';
-                    
+                    // User not authenticated - ensure auth links are visible
+                    showAuthButtons();
                     console.log('❌ User not authenticated in nav');
                 }
             } catch (error) {
                 console.error('Nav auth check failed:', error);
-                // On error, show auth links
-                if (authSignup) authSignup.style.display = 'block';
-                if (authLogin) authLogin.style.display = 'block';
-                if (userMenu) userMenu.style.display = 'none';
+                // On error, ensure auth links are visible
+                showAuthButtons();
             }
             
             // Handle logout
@@ -73,10 +89,8 @@ function initializeNavAuth() {
                 });
             }
         } else {
-            // No Supabase config - show auth links
-            if (authSignup) authSignup.style.display = 'block';
-            if (authLogin) authLogin.style.display = 'block';
-            if (userMenu) userMenu.style.display = 'none';
+            // No Supabase config - ensure auth links are visible
+            showAuthButtons();
         }
     });
 }
